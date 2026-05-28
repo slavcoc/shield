@@ -1,16 +1,16 @@
 # emailShield PRD
 
 ## Product Summary
-emailShield is a subscription email-fraud product for SMBs in North Macedonia. It focuses on invoice and payment fraud: when legitimate business emails are intercepted and edited to replace bank account details or other payment instructions.
+emailShield is a subscription BEC and email-fraud product for SMBs in North Macedonia. It focuses on business email compromise (BEC) attacks that use deception, impersonation, and social engineering to trick teams into sharing sensitive information or transferring funds.
 
 ## Problem
-SMBs lose money when attackers intercept invoice emails, change payment instructions, and resend them to customers. Existing email security products focus on phishing and malware, not invoice fraud. emailShield fills that gap.
+SMBs lose money when attackers impersonate trusted contacts, hijack communication context, and apply urgency pressure to bypass verification controls. Existing email security products often focus on phishing and malware, but not enough on business-process fraud and social engineering in operational workflows. emailShield fills that gap.
 
 ## Positioning
-- Primary position: invoice fraud prevention
-- Secondary value: broad email fraud detection
+- Primary position: BEC prevention (deception, impersonation, social engineering)
+- Secondary value: invoice/payment fraud prevention as a high-impact BEC use case
 - Core promise: money saved / prevented loss
-- Competitive angle: major email security vendors do not focus on invoice/payment manipulation
+- Competitive angle: major email security vendors do not focus deeply on business-process deception and payment-manipulation workflows for SMB teams
 
 ## Target Customers
 - First beachhead: construction and trades, plus B2B services
@@ -20,8 +20,10 @@ SMBs lose money when attackers intercept invoice emails, change payment instruct
 ## MVP Scope
 ### Included
 - IMAP-based onboarding for SMB mailboxes
-- Invoice and payment email detection across email
+- BEC and high-risk business email detection across email
 - Fraud signals:
+- impersonation of executives, vendors, or trusted contacts
+- deception and social-engineering language patterns
   - bank account or payment instruction changes
   - lookalike sender domains
   - display-name spoofing
@@ -70,8 +72,9 @@ SMBs lose money when attackers intercept invoice emails, change payment instruct
 - Operational metric: low false positives
 
 ## Product Defaults
-- Invoice/payment emails are the primary scope
-- All email can be scanned, but fraud rules should focus on invoice/payment risk
+- BEC scenarios are the primary scope
+- Invoice/payment emails are a critical BEC scenario within that scope
+- All email can be scanned, but fraud rules should focus on high-risk business workflows
 - Tenant-level configuration controls strictness
 - Start with flag-and-allow as the safest default
 
