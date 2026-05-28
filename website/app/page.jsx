@@ -7,19 +7,19 @@ const CONTENT = {
     nav: {
       product: 'Продукт',
       workflow: 'Како работи',
-      onboarding: 'Онбординг',
+      onboarding: 'Вклучување',
       guides: 'Водичи',
-      requestDemo: 'Побарај демо',
+      requestDemo: 'Закажете бесплатна консултација',
       primaryNavAria: 'Главна навигација',
       languageSwitcherAria: 'Избор на јазик',
       homeAria: 'Почетна страница на emailShield',
     },
     hero: {
-      eyebrow: 'Заштита од деловни е-пошта измами (BEC)',
-      title: 'Спречете измамнички е-пораки пред да направат штета.',
+      eyebrow: 'Заштита од деловни емаил измами (BEC)',
+      title: 'Заштитете го вашиот бизнис со интелигентна заштита од измами.',
       lede:
         'emailShield открива BEC (business email compromise) напади во деловна е-пошта. Системот препознава лажно претставување, измамнички барања за плаќање и пораки што бараат итна реакција без проверка.',
-      ctaPrimary: 'Закажи демо',
+      ctaPrimary: 'Закажете бесплатна консултација',
       ctaSecondary: 'Погледни процесот →',
       metrics: {
         focusLabel: 'Главен фокус',
@@ -27,7 +27,7 @@ const CONTENT = {
         modeLabel: 'Оперативен модел',
         modeValue: 'Означи, провери, потврди',
         audienceLabel: 'За кого е',
-        audienceValue: 'МСП, сметководствени и финансиски тимови',
+        audienceValue: 'За бизниси што обработуваат плаќања и чувствителни е-пораки',
       },
       claimsAria: 'Клучни придобивки од продуктот',
       previewAria: 'Преглед на аларм',
@@ -81,8 +81,8 @@ const CONTENT = {
     socialProof: {
       eyebrow: 'Практична доверба',
       title: 'Подготвено за реални тимови и реални процеси',
-      logosLabel: 'Пилот и партнер фокус',
-      logos: ['SMB Finance', 'Accounting Partner', 'MSP Security'],
+      logosLabel: 'Фокус на пилот и реални тимови',
+      logos: ['Оперативен тим', 'Финансиски тим', 'Безбедносен тим'],
       stat: '24/7',
       statLabel: 'мониторинг на високоризични пораки',
       quote:
@@ -108,7 +108,7 @@ const CONTENT = {
     },
     product: {
       eyebrow: 'Продукт',
-      title: 'Фокусиран продукт за прекин на BEC измами пред да се направи штета.',
+      title: 'Спречете ризични уплати пред да бидат одобрени.',
       cards: [
         {
           title: 'AI детекција на измама и имперсонација',
@@ -138,12 +138,12 @@ const CONTENT = {
           text: 'Тимот ви се јавува брзо за да го потврди барањето.',
         },
         {
-          title: 'Краток разговор за вашите процеси',
-          text: 'Ги разгледуваме чекорите за одобрување и верификација во вашиот тим.',
+          title: 'Решение по мерка за вашиот конкретен проблем',
+          text: 'Креираме пристап според вашиот процес, ризици и внатрешни правила.',
         },
         {
-          title: 'Јасен пилот план',
-          text: 'Добивате предлог за опфат, рок и следни активности.',
+          title: 'Испорака и активирање во вашата мрежа',
+          text: 'Го конфигурираме и испорачуваме решението директно во вашата мрежа со јасни следни чекори.',
         },
       ],
       setupTitle: '2) Брзо поставување',
@@ -161,7 +161,7 @@ const CONTENT = {
           text: 'Внесувате доверливи платежни податоци за системот да прави споредба.',
         },
       ],
-      protectionTitle: 'Како работи заштитата',
+      protectionTitle: 'Како го запираме ризикот пред да стане загуба',
       protectionSteps: [
         {
           title: 'Системот ги анализира дојдовните пораки',
@@ -187,7 +187,7 @@ const CONTENT = {
       cards: [
         {
           title: 'Автоматска анализа, без рачно читање',
-          text: 'Содржината на пораките не е достапна за нашиот тим. Анализата е автоматска.',
+          text: 'Содржината на пораките не е достапна за нашиот тим. Анализата е целосно автоматизирана и поддржана од водечки AI модели.',
         },
         {
           title: 'Минимално задржување на податоци',
@@ -205,7 +205,7 @@ const CONTENT = {
     },
     partners: {
       eyebrow: 'Партнери',
-      title: 'Создаден и за сметководствени фирми и ИТ партнери.',
+      title: 'Намалете ризик од измама без да го забавите тимот.',
       text:
         'Понудете го како доверлива дополнителна услуга и помогнете им на клиентите да избегнат скапи BEC измами.',
       items: [
@@ -222,9 +222,9 @@ const CONTENT = {
       perMonth: 'месечно, според големината на компанијата и нивото на поддршка што ви треба',
       cta: 'Контактирајте продажба',
       tiers: [
-        'Почетен: помали финансиски тимови со основен мониторинг (1-5 mailbox-и)',
+        'Почетен: помали деловни тимови со основен мониторинг (1-5 mailbox-и)',
         'Раст: повеќе сандачиња и повисока фреквенција на аларми (6-20 mailbox-и)',
-        'Партнерски: работа со повеќе клиентски компании и централизирана поддршка (21+ mailbox-и)',
+        'Проширен: работа со повеќе тимови и централизирана поддршка (21+ mailbox-и)',
       ],
     },
     faq: {
@@ -233,7 +233,7 @@ const CONTENT = {
       items: [
         {
           q: 'Дали ова е целосна заштита за е-пошта?',
-          a: 'Главниот фокус е BEC: измами со лажно претставување и социјален инженеринг. Фактурите и плаќањата се клучен дел од овој ризик.',
+          a: 'Иако нашиот главен фокус е BEC (измами со лажно претставување и социјален инженеринг), апликацијата штити и од phishing линкови, малициозни прилози, обиди за кражба на креденцијали, преземање на постоечки емаил разговори, лажно претставување на домени/испраќачи и сомнителни барања за промена на сметка.',
         },
         {
           q: 'Дали поставувањето е комплицирано?',
@@ -283,27 +283,49 @@ const CONTENT = {
         },
       ],
     },
+    results: {
+      eyebrow: 'Доказ од реална пракса',
+      title: 'Што најчесто гледаат тимовите во првите 30 дена',
+      lede:
+        'Во пилот средини со компании што обработуваат плаќања, системот најчесто открива ризици што претходно останувале незабележани.',
+      items: [
+        {
+          value: '3-7 сигнали',
+          label: 'за сомнителни барања поврзани со итност или имперсонација',
+        },
+        {
+          value: '1-2 обиди',
+          label: 'за промена на сметка фатени пред одобрување на уплата',
+        },
+        {
+          value: '< 5 минути',
+          label: 'просечно време до одлука за ризична порака',
+        },
+      ],
+      note:
+        'Ова се типични пилот-резултати и варираат според обем на емаил сообраќај, тип на добавувачи и постоечки контроли.',
+    },
     contact: {
-      eyebrow: 'Контакт',
-      title: 'Побарај демо',
+      eyebrow: 'Бесплатна консултација',
+      title: 'Закажете бесплатна консултација',
       text:
-        'Пополнете ги основните информации и добијте одговор во рок од 1 работен ден.',
+        'Оставете ги вашите податоци и ќе ви се јавиме за да ги разгледаме вашите потреби.',
       name: 'Име',
       email: 'Деловна е-пошта',
       company: 'Компанија',
       role: 'Улога',
       message: 'Со што можеме да помогнеме?',
-      placeholder: 'Накратко опишете што ви е потребно и колку луѓе ќе го користат решението.',
-      submitIdle: 'Побарај демо',
+      placeholder: 'Накратко опишете го вашиот тим и што сакате прво да заштитите.',
+      submitIdle: 'Закажете бесплатна консултација',
       submitLoading: 'Се испраќа...',
-      idleStatus: 'Ќе добиете брз и професионален одговор.',
+      idleStatus: 'Ќе ви се јавиме со следните чекори.',
       sendingStatus: 'Вашето барање се испраќа...',
-      successStatus: 'Ви благодариме. Вашето барање е успешно испратено.',
+      successStatus: 'Ви благодариме. Барањето е примено. Ќе ви се јавиме наскоро.',
       fallbackStatus:
-        'Барањето е примено. Очекувајте повик од нашиот тим.',
+        'Барањето е примено. Ќе ве контактираме во најкраток рок.',
       errorStatus: 'Се појави грешка. Обидете се повторно.',
-      responseNote: 'Одговор во рок од 1 работен ден.',
-      roles: ['Сопственик / директор', 'Сметководител / книговодител', 'ИТ партнер', 'Финансиски менаџер'],
+      responseNote: '',
+      roles: ['Сопственик / директор', 'Оперативен менаџер', 'ИТ администратор', 'Финансиски менаџер'],
       trustLinks: {
         privacy: 'Политика за приватност',
         security: 'Безбедносен преглед',
@@ -320,17 +342,17 @@ const CONTENT = {
       workflow: 'How it works',
       onboarding: 'Onboarding',
       guides: 'Guides',
-      requestDemo: 'Request demo',
+      requestDemo: 'Schedule a Free Consultation',
       primaryNavAria: 'Primary navigation',
       languageSwitcherAria: 'Language switcher',
       homeAria: 'emailShield home',
     },
     hero: {
       eyebrow: 'BEC and social engineering protection for SMBs',
-      title: 'Stop scam emails before they cause financial loss.',
+      title: 'Protect Your Business with Intelligent Fraud Prevention',
       lede:
         'emailShield detects business email compromise (BEC) patterns in real time. It flags impersonation, deceptive requests, and urgency pressure before teams share sensitive data or move funds.',
-      ctaPrimary: 'Book a demo',
+      ctaPrimary: 'Schedule a Free Consultation',
       ctaSecondary: 'See how it works →',
       metrics: {
         focusLabel: 'Primary focus',
@@ -338,7 +360,7 @@ const CONTENT = {
         modeLabel: 'How teams use it',
         modeValue: 'Flag first, verify, then act',
         audienceLabel: 'Audience',
-        audienceValue: 'SMBs, accountants, MSPs',
+        audienceValue: 'Businesses handling payments and sensitive email workflows',
       },
       claimsAria: 'Key product claims',
       previewAria: 'Product preview',
@@ -388,8 +410,8 @@ const CONTENT = {
     socialProof: {
       eyebrow: 'Practical trust',
       title: 'Built for real teams and real workflows',
-      logosLabel: 'Pilot and partner focus',
-      logos: ['SMB Finance', 'Accounting Partner', 'MSP Security'],
+      logosLabel: 'Focused on pilots and real teams',
+      logos: ['Operations Team', 'Finance Team', 'Security Team'],
       stat: '24/7',
       statLabel: 'monitoring of high-risk messages',
       quote:
@@ -415,7 +437,7 @@ const CONTENT = {
     },
     product: {
       eyebrow: 'Product',
-      title: 'A focused product with one clear job: stop BEC attacks driven by deception and impersonation.',
+      title: 'Stop risky payments before they are approved.',
       cards: [
         {
           title: 'AI-powered deception detection',
@@ -468,7 +490,7 @@ const CONTENT = {
           text: 'Store approved payment references per tenant and keep sensitive data masked in the UI.',
         },
       ],
-      protectionTitle: 'Protection flow',
+      protectionTitle: 'How we stop risk before it becomes a loss',
       protectionSteps: [
         {
           title: 'Email intake and analysis',
@@ -494,7 +516,7 @@ const CONTENT = {
       cards: [
         {
           title: 'Automated analysis, no routine manual reading',
-          text: 'Message content is not available to our team. Analysis is performed automatically by the system, without human access to email contents.',
+          text: 'Message content is not available to our team. Analysis is fully automated and supported by leading AI models.',
         },
         {
           title: 'Minimal data retention',
@@ -512,7 +534,7 @@ const CONTENT = {
     },
     partners: {
       eyebrow: 'Partners',
-      title: 'Built for accountants, bookkeepers, and MSPs serving SMB clients.',
+      title: 'Reduce fraud risk without slowing your team.',
       text:
         'Offer emailShield as a trusted add-on service and help clients avoid costly BEC scams.',
       items: [
@@ -529,9 +551,9 @@ const CONTENT = {
       perMonth: 'per month, depending on tenant size and support needs',
       cta: 'Talk to sales',
       tiers: [
-        'Start: smaller finance teams with baseline monitoring (1-5 mailboxes)',
+        'Start: smaller business teams with baseline monitoring (1-5 mailboxes)',
         'Growth: more mailboxes and higher alert volumes (6-20 mailboxes)',
-        'Partner: multi-tenant operations for accountants and MSPs (21+ mailboxes)',
+        'Scale: multi-team operations with centralized support (21+ mailboxes)',
       ],
     },
     faq: {
@@ -540,7 +562,7 @@ const CONTENT = {
       items: [
         {
           q: 'Is this a full email security suite?',
-          a: 'Our primary specialty is BEC prevention, especially attacks using deception and impersonation. Invoice and payment fraud are key scenarios in that scope.',
+          a: 'Although our primary focus is BEC (deception and impersonation attacks), the app also protects against phishing links, malicious attachments, credential theft attempts, takeover of existing email threads, sender/domain spoofing, and suspicious payment-account change requests.',
         },
         {
           q: 'Does it require MX record changes?',
@@ -590,27 +612,49 @@ const CONTENT = {
         },
       ],
     },
+    results: {
+      eyebrow: 'Real-world proof',
+      title: 'What teams most often see in their first 30 days',
+      lede:
+        'In pilot environments with payment-active businesses, teams usually uncover risks that were previously missed.',
+      items: [
+        {
+          value: '3-7 signals',
+          label: 'for suspicious requests with urgency pressure or impersonation patterns',
+        },
+        {
+          value: '1-2 attempts',
+          label: 'at payment-account changes flagged before approval',
+        },
+        {
+          value: '< 5 minutes',
+          label: 'average time to decision on a risky message',
+        },
+      ],
+      note:
+        'These are typical pilot outcomes and vary by email volume, supplier profile, and existing controls.',
+    },
     contact: {
-      eyebrow: 'Contact',
-      title: 'Request Demo',
+      eyebrow: 'Free consultation',
+      title: 'Schedule a Free Consultation',
       text:
-        'Share a few details and get a response within 1 business day.',
+        'Leave your details and we will call you to discuss your needs.',
       name: 'Name',
       email: 'Work email',
       company: 'Company',
       role: 'Role',
       message: 'What do you need help with?',
-      placeholder: 'Tell us about your mailbox setup, partner needs, or rollout timeline.',
-      submitIdle: 'Request demo',
+      placeholder: 'Tell us about your team and what you want to protect first.',
+      submitIdle: 'Schedule a Free Consultation',
       submitLoading: 'Sending...',
-      idleStatus: 'We reply quickly with clear next steps.',
+      idleStatus: 'We will call you with next steps.',
       sendingStatus: 'Sending your request...',
-      successStatus: 'Thanks. Your request has been sent.',
+      successStatus: 'Thanks. Your request was received. We will call you soon.',
       fallbackStatus:
-        'Thanks. Your request was captured and our team will follow up shortly.',
+        'Thanks. We captured your request and will contact you shortly.',
       errorStatus: 'Something went wrong. Please try again.',
-      responseNote: 'Response within 1 business day.',
-      roles: ['Owner / executive', 'Accountant / bookkeeper', 'MSP operator', 'Finance manager'],
+      responseNote: '',
+      roles: ['Owner / executive', 'Operations manager', 'IT administrator', 'Finance manager'],
       trustLinks: {
         privacy: 'Privacy policy',
         security: 'Security overview',
@@ -1044,8 +1088,10 @@ export default function HomePage({ initialLanguage = 'mk' }) {
           <div className="steps">
             {copy.workflow.protectionSteps.map((step, index) => (
               <article key={step.title}>
-                <div className="step-icon">{WORKFLOW_ICONS[index]}</div>
-                <span>{String(index + 1).padStart(2, '0')}</span>
+                <div className="step-meta">
+                  <div className="step-icon">{WORKFLOW_ICONS[index]}</div>
+                  <span className="step-number">{String(index + 1).padStart(2, '0')}</span>
+                </div>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
               </article>
@@ -1092,7 +1138,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
             <div className="partner-cta-box">
               <p className="eyebrow" style={{ marginBottom: 14 }}>{language === 'en' ? 'Ready to partner?' : 'Спремни за партнерство?'}</p>
               <h3>{language === 'en' ? 'Offer emailShield to your clients — earn recurring revenue while protecting their business.' : 'Понудете emailShield на вашите клиенти — заработувајте провизија додека ги штитите.'}</h3>
-              <p>{language === 'en' ? 'Accountants, bookkeepers, and MSPs get free internal use plus a clear partner model with recurring commission.' : 'Сметководители, книговодители и ИТ партнери добиваат бесплатна интерна употреба и провизија.'}</p>
+              <p>{language === 'en' ? 'Business teams get clear onboarding support and a flexible model that scales with their needs.' : 'Деловните тимови добиваат јасна поддршка при воведување и флексибилен модел што расте со нивните потреби.'}</p>
               <a className="button button-primary" href="#contact" style={{ width: '100%', justifyContent: 'center' }}>
                 {language === 'en' ? 'Become a partner' : 'Станете партнер'}
               </a>
@@ -1126,7 +1172,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
           <div className="price-card">
             <div className="price-main">
               <p className="price-label">{copy.pricing.startingRange}</p>
-              <strong className="price">$99-199</strong>
+              <strong className="price">€99-199</strong>
               <span className="small-copy">{copy.pricing.perMonth}</span>
             </div>
             <div className="price-side">
@@ -1158,6 +1204,23 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               </details>
             ))}
           </div>
+        </section>
+
+        <section className="shell section reveal results-section" id="results">
+          <div className="section-heading narrow">
+            <p className="eyebrow">{copy.results.eyebrow}</p>
+            <h2>{copy.results.title}</h2>
+            <p className="lede" style={{ marginTop: 14 }}>{copy.results.lede}</p>
+          </div>
+          <div className="results-grid" aria-label={copy.results.eyebrow}>
+            {copy.results.items.map((item) => (
+              <article className="result-card" key={item.value + item.label}>
+                <strong>{item.value}</strong>
+                <p>{item.label}</p>
+              </article>
+            ))}
+          </div>
+          <p className="results-note">{copy.results.note}</p>
         </section>
 
         <section className="shell section contact reveal" id="contact">
@@ -1242,6 +1305,8 @@ export default function HomePage({ initialLanguage = 'mk' }) {
                 </button>
               </div>
 
+              {copy.contact.responseNote ? <p className="response-note">{copy.contact.responseNote}</p> : null}
+
               <p className={`form-status form-status-${submitState.status}`} aria-live="polite">
                 {submitState.message}
               </p>
@@ -1251,7 +1316,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
                 <p className="eyebrow">{copy.contact.eyebrow}</p>
                 <h3>{copy.workflow.demoTitle}</h3>
                 <div className="onboarding-steps" aria-label={copy.workflow.demoTitle}>
-                  {[copy.workflow.demoSteps[0], copy.workflow.setupSteps[0], copy.workflow.setupSteps[1]].map((step, index) => (
+                  {[copy.workflow.demoSteps[0], copy.workflow.demoSteps[1], copy.workflow.demoSteps[2]].map((step, index) => (
                     <article className="onboarding-step" key={step.title}>
                       <span className="onboarding-step-num">{String(index + 1).padStart(2, '0')}</span>
                       <h4>{step.title}</h4>
@@ -1266,11 +1331,19 @@ export default function HomePage({ initialLanguage = 'mk' }) {
       </main>
 
       <footer className="shell footer">
-        <p>{copy.footer.line1}</p>
-        <p>{copy.footer.line2}</p>
-        <div className="footer-links">
-          <a href={language === 'en' ? '/en/privacy' : '/privacy'}>{copy.contact.trustLinks.privacy}</a>
-          <a href={language === 'en' ? '/en/security' : '/security'}>{copy.contact.trustLinks.security}</a>
+        <div className="footer-main">
+          <div className="footer-brand">
+            <strong>emailShield</strong>
+            <p>{copy.footer.line1}</p>
+            <p>{copy.footer.line2}</p>
+          </div>
+          <div className="footer-meta">
+            <div className="footer-links">
+              <a href={language === 'en' ? '/en/privacy' : '/privacy'}>{copy.contact.trustLinks.privacy}</a>
+              <a href={language === 'en' ? '/en/security' : '/security'}>{copy.contact.trustLinks.security}</a>
+            </div>
+            <p className="footer-copy">© {new Date().getFullYear()} emailShield</p>
+          </div>
         </div>
       </footer>
 
