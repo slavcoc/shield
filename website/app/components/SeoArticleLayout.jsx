@@ -9,6 +9,7 @@ export default function SeoArticleLayout({
 }) {
   const isEn = language === 'en';
   const homeHref = isEn ? '/en' : '/';
+  const partnersHref = isEn ? '/en/partners' : '/partners';
   const pageEnHref = path === '/' ? '/en' : `/en${path}`;
   const pageMkHref = path;
 
@@ -56,7 +57,7 @@ export default function SeoArticleLayout({
         <nav className="nav" aria-label={copy.primaryNavAria}>
           <a href={`${homeHref}#product`}>{copy.navProduct}</a>
           <a href={`${homeHref}#workflow`}>{copy.navWorkflow}</a>
-          <a href={`${homeHref}#partners`}>{copy.navPartners}</a>
+          <a href={partnersHref}>{copy.navPartners}</a>
           <a href={`${homeHref}#faq`}>{copy.navFaq}</a>
         </nav>
 

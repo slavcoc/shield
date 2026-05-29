@@ -20,7 +20,6 @@ const CONTENT = {
       lede:
         'emailShield открива BEC (business email compromise) напади во деловна е-пошта. Системот препознава лажно претставување, измамнички барања за плаќање и пораки што бараат итна реакција без проверка.',
       ctaPrimary: 'Закажете бесплатна консултација',
-      ctaSecondary: 'Погледни процесот →',
       metrics: {
         focusLabel: 'Главен фокус',
         focusValue: 'BEC, лажно претставување и социјален инженеринг',
@@ -45,7 +44,6 @@ const CONTENT = {
       ],
       action: 'Статус',
       actionValue: 'Означено за задолжителна проверка',
-      viewWorkflow: 'Погледни процес',
     },
     trust: {
       aria: 'Резиме на позиционирање',
@@ -190,16 +188,8 @@ const CONTENT = {
           text: 'Содржината на пораките не е достапна за нашиот тим. Анализата е целосно автоматизирана и поддржана од водечки AI модели.',
         },
         {
-          title: 'Минимално задржување на податоци',
-          text: 'Се задржуваат само податоци што се потребни за аларм, ревизија и конфигурација.',
-        },
-        {
           title: 'Енкрипција во пренос и складирање',
           text: 'Податоците се шифрираат и додека се пренесуваат и додека се чуваат.',
-        },
-        {
-          title: 'Open-source транспарентност',
-          text: 'Безбедносниот пристап е базиран на open-source принципи за јасна проверливост и доверба.',
         },
       ],
     },
@@ -353,7 +343,6 @@ const CONTENT = {
       lede:
         'emailShield detects business email compromise (BEC) patterns in real time. It flags impersonation, deceptive requests, and urgency pressure before teams share sensitive data or move funds.',
       ctaPrimary: 'Schedule a Free Consultation',
-      ctaSecondary: 'See how it works →',
       metrics: {
         focusLabel: 'Primary focus',
         focusValue: 'BEC, impersonation, and social engineering',
@@ -374,7 +363,6 @@ const CONTENT = {
       signals: ['Executive/vendor impersonation', 'Payment instruction change', 'Urgency and pressure language'],
       action: 'Action',
       actionValue: 'Flagged for review',
-      viewWorkflow: 'View workflow',
     },
     trust: {
       aria: 'Positioning summary',
@@ -519,16 +507,8 @@ const CONTENT = {
           text: 'Message content is not available to our team. Analysis is fully automated and supported by leading AI models.',
         },
         {
-          title: 'Minimal data retention',
-          text: 'Only the data required for alerts, policy decisions, and audit context is retained.',
-        },
-        {
           title: 'Encryption in transit and at rest',
           text: 'Data is protected with encryption while transmitted and while stored.',
-        },
-        {
-          title: 'Open-source transparency',
-          text: 'Key parts of the security approach are open-source based for clearer review and stronger trust.',
         },
       ],
     },
@@ -764,13 +744,6 @@ const ICONS = {
 const PRODUCT_ICONS = [ICONS.zap, ICONS.check, ICONS.lock, ICONS.code];
 const SECURITY_ICONS = [ICONS.eye, ICONS.database, ICONS.key, ICONS.code];
 const WORKFLOW_ICONS = [ICONS.mail, ICONS.zap, ICONS.flag, ICONS.bell];
-const PARTNER_ICONS = [ICONS.dollar, ICONS.users, ICONS.briefcase];
-const STATS = [
-  { num: '24/7', labelKey: 0 },
-  { num: '3×', labelKey: 1 },
-  { num: '100%', labelKey: 2 },
-  { num: '<5s', labelKey: 3 },
-];
 
 export default function HomePage({ initialLanguage = 'mk' }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://emailshield.mk';
@@ -984,54 +957,77 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               <a className="button button-primary" href="#contact">
                 {copy.hero.ctaPrimary}
               </a>
-              <a className="button button-secondary" href="#workflow">
-                {copy.hero.ctaSecondary}
-              </a>
             </div>
 
           </div>
 
-          <aside className="hero-panel" aria-label={copy.hero.previewAria}>
-            <div className="panel-header">
-              <span className="status-dot" />
-              {copy.preview.title}
-            </div>
-            <div className="sender-row">
-              <div className="sender-avatar">CF</div>
-              <div className="sender-info">
-                <div className="sender-name">Cristian Fleming, CFO</div>
-                <div className="sender-domain">cfo@company-secure.net</div>
+          <aside className="hero-panel outlook-mail" aria-label={copy.hero.previewAria}>
+            <div className="mail-toolbar">
+              <div className="mail-toolbar-dots" aria-hidden="true">
+                <span />
+                <span />
+                <span />
               </div>
-              <span className="spoof-badge">{language === 'en' ? 'Spoofed' : 'Лажно'}</span>
+              <span className="mail-app-label">Outlook</span>
+              <span className="mail-toolbar-time">09:41</span>
             </div>
-            <div className="alert-card">
-              <div className="alert-card-top">
-                <span className="pill pill-danger">{copy.preview.risk}</span>
-                <span className="small-copy">{copy.preview.detectedInMail}</span>
+
+            <div className="mail-ribbon">
+              <span>{copy.preview.title}</span>
+            </div>
+
+            <div className="mail-message">
+              <div className="mail-subject-row">
+                <strong>{language === 'en' ? 'RE: Updated payment instructions' : 'RE: Ажурирани инструкции за плаќање'}</strong>
+                <span className="spoof-badge">{language === 'en' ? 'High risk' : 'Висок ризик'}</span>
               </div>
-              <div className="comparison">
-                <div>
-                  <span className="comparison-label">{copy.preview.approvedAccount}</span>
-                  <strong>MK12 **** 2048</strong>
+
+              <div className="mail-meta-grid">
+                <div className="mail-meta-row">
+                  <span>{language === 'en' ? 'From' : 'Од'}</span>
+                  <strong>Cristian Fleming, CFO &lt;cfo@company-secure.net&gt;</strong>
                 </div>
-                <div className="comparison-arrow">→</div>
-                <div>
-                  <span className="comparison-label">{copy.preview.detectedAccount}</span>
-                  <strong>MK54 **** 8891</strong>
+                <div className="mail-meta-row">
+                  <span>{language === 'en' ? 'To' : 'До'}</span>
+                  <strong>{language === 'en' ? 'Finance Team' : 'Финансиски тим'}</strong>
                 </div>
               </div>
-              <ul className="signal-list">
-                {copy.preview.signals.map((signal) => (
-                  <li key={signal}>{signal}</li>
-                ))}
-              </ul>
+
+              <p className="mail-body-preview">
+                {language === 'en'
+                  ? 'Please process this invoice immediately and update the account details below before noon.'
+                  : 'Ве молам веднаш процесирајте ја оваа фактура и ажурирајте ги податоците за сметката пред пладне.'}
+              </p>
+
+              <div className="alert-card">
+                <div className="alert-card-top">
+                  <span className="pill pill-danger">{copy.preview.risk}</span>
+                  <span className="small-copy">{copy.preview.detectedInMail}</span>
+                </div>
+                <div className="comparison">
+                  <div>
+                    <span className="comparison-label">{copy.preview.approvedAccount}</span>
+                    <strong>MK12 **** 2048</strong>
+                  </div>
+                  <div className="comparison-arrow">→</div>
+                  <div>
+                    <span className="comparison-label">{copy.preview.detectedAccount}</span>
+                    <strong>MK54 **** 8891</strong>
+                  </div>
+                </div>
+                <ul className="signal-list">
+                  {copy.preview.signals.map((signal) => (
+                    <li key={signal}>{signal}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
             <div className="panel-footer">
               <div>
                 <span className="comparison-label">{copy.preview.action}</span>
                 <strong>{copy.preview.actionValue}</strong>
               </div>
-              <a href="#workflow">{copy.preview.viewWorkflow}</a>
             </div>
           </aside>
 
@@ -1061,9 +1057,12 @@ export default function HomePage({ initialLanguage = 'mk' }) {
           </div>
 
           <div className="feature-grid product-grid">
-            {copy.product.cards.map((card, i) => (
+            {[
+              ...copy.product.cards.map((card, i) => ({ card, icon: PRODUCT_ICONS[i] })),
+              ...copy.security.cards.map((card, i) => ({ card, icon: SECURITY_ICONS[i] })),
+            ].map(({ card, icon }) => (
               <article className="feature-card" key={card.title}>
-                <div className="card-icon">{PRODUCT_ICONS[i]}</div>
+                <div className="card-icon">{icon}</div>
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
               </article>
@@ -1071,64 +1070,23 @@ export default function HomePage({ initialLanguage = 'mk' }) {
           </div>
         </section>
 
-        <hr className="shell section-rule" />
-
-        <section className="shell reveal stats-strip-section" aria-label={copy.efficiency.eyebrow}>
-          <div className="stats-band">
-            {STATS.map((s) => (
-              <div className="stat-item" key={s.num}>
-                <div className="stat-num">{s.num}</div>
-                <p>{copy.efficiency.items[s.labelKey].label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="shell section reveal" id="trust">
+        <section className="shell section reveal results-section" id="results">
           <div className="section-heading narrow">
-            <p className="eyebrow">{copy.security.eyebrow}</p>
-            <h2>{copy.trust.whyTitle}</h2>
+            <p className="eyebrow">{copy.results.eyebrow}</p>
+            <h2>{copy.results.title}</h2>
+            <p className="lede" style={{ marginTop: 14 }}>{copy.results.lede}</p>
           </div>
-          <div className="feature-grid product-grid">
-            {copy.security.cards.map((card, i) => (
-              <article className="feature-card" key={card.title}>
-                <div className="card-icon">{SECURITY_ICONS[i]}</div>
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
+          <div className="results-grid results-strip-grid" aria-label={copy.results.eyebrow}>
+            {copy.results.items.map((item) => (
+              <article className="result-card" key={item.value + item.label}>
+                <div className="result-card-inner">
+                  <strong>{item.value}</strong>
+                  <p>{item.label}</p>
+                </div>
               </article>
             ))}
           </div>
-        </section>
-
-        <hr className="shell section-rule" />
-
-        <section className="shell section reveal" id="partners">
-          <div className="partners-layout">
-            <div className="partners-intro">
-              <p className="eyebrow">{copy.partners.eyebrow}</p>
-              <h2 style={{ fontSize: 'clamp(2rem, 4.4vw, 3.2rem)', lineHeight: 1.04, marginTop: 12 }}>{copy.partners.title}</h2>
-              <p>{copy.partners.text}</p>
-              <div className="partner-items">
-                {copy.partners.items.map((item, i) => (
-                  <div className="partner-item" key={item.title}>
-                    <div className="card-icon" style={{ margin: 0 }}>{PARTNER_ICONS[i]}</div>
-                    <div>
-                      <strong>{item.title}</strong>
-                      <p>{item.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="partner-cta-box">
-              <p className="eyebrow" style={{ marginBottom: 14 }}>{language === 'en' ? 'Ready to partner?' : 'Спремни за партнерство?'}</p>
-              <h3>{language === 'en' ? 'Offer emailShield to your clients — earn recurring revenue while protecting their business.' : 'Понудете emailShield на вашите клиенти — заработувајте провизија додека ги штитите.'}</h3>
-              <p>{language === 'en' ? 'Business teams get clear onboarding support and a flexible model that scales with their needs.' : 'Деловните тимови добиваат јасна поддршка при воведување и флексибилен модел што расте со нивните потреби.'}</p>
-              <a className="button button-primary" href="#contact" style={{ width: '100%', justifyContent: 'center' }}>
-                {language === 'en' ? 'Become a partner' : 'Станете партнер'}
-              </a>
-            </div>
-          </div>
+          <p className="results-note">{copy.results.note}</p>
         </section>
 
         <section className="shell section reveal" id="guides">
@@ -1189,23 +1147,6 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               </details>
             ))}
           </div>
-        </section>
-
-        <section className="shell section reveal results-section" id="results">
-          <div className="section-heading narrow">
-            <p className="eyebrow">{copy.results.eyebrow}</p>
-            <h2>{copy.results.title}</h2>
-            <p className="lede" style={{ marginTop: 14 }}>{copy.results.lede}</p>
-          </div>
-          <div className="results-grid results-strip-grid" aria-label={copy.results.eyebrow}>
-            {copy.results.items.map((item) => (
-              <article className="result-card" key={item.value + item.label}>
-                <strong>{item.value}</strong>
-                <p>{item.label}</p>
-              </article>
-            ))}
-          </div>
-          <p className="results-note">{copy.results.note}</p>
         </section>
 
         <section className="shell section contact reveal" id="contact">
