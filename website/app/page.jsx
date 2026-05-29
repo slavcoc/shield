@@ -989,20 +989,6 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               </a>
             </div>
 
-            <dl className="metrics" aria-label={copy.hero.claimsAria}>
-              <div>
-                <dt>{copy.hero.metrics.focusLabel}</dt>
-                <dd>{copy.hero.metrics.focusValue}</dd>
-              </div>
-              <div>
-                <dt>{copy.hero.metrics.modeLabel}</dt>
-                <dd>{copy.hero.metrics.modeValue}</dd>
-              </div>
-              <div>
-                <dt>{copy.hero.metrics.audienceLabel}</dt>
-                <dd>{copy.hero.metrics.audienceValue}</dd>
-              </div>
-            </dl>
           </div>
 
           <aside className="hero-panel" aria-label={copy.hero.previewAria}>
@@ -1048,6 +1034,24 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               <a href="#workflow">{copy.preview.viewWorkflow}</a>
             </div>
           </aside>
+
+          <div className="hero-workflow" id="workflow" aria-label={copy.nav.workflow}>
+            <div className="hero-workflow-header">
+              <p className="eyebrow">{copy.workflow.eyebrow}</p>
+            </div>
+            <div className="hero-workflow-grid">
+              {copy.workflow.protectionSteps.slice(0, 4).map((step, index) => (
+                <article className="hero-workflow-card" key={step.title}>
+                  <div className="hero-workflow-meta">
+                    <div className="hero-workflow-icon">{WORKFLOW_ICONS[index]}</div>
+                    <span className="hero-workflow-number">{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="shell section reveal" id="product">
@@ -1056,7 +1060,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
             <h2>{copy.product.title}</h2>
           </div>
 
-          <div className="feature-grid">
+          <div className="feature-grid product-grid">
             {copy.product.cards.map((card, i) => (
               <article className="feature-card" key={card.title}>
                 <div className="card-icon">{PRODUCT_ICONS[i]}</div>
@@ -1076,25 +1080,6 @@ export default function HomePage({ initialLanguage = 'mk' }) {
                 <div className="stat-num">{s.num}</div>
                 <p>{copy.efficiency.items[s.labelKey].label}</p>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="shell section workflow reveal" id="workflow">          <div className="section-heading narrow">
-            <p className="eyebrow">{copy.workflow.eyebrow}</p>
-            <h2>{copy.workflow.protectionTitle}</h2>
-          </div>
-
-          <div className="steps">
-            {copy.workflow.protectionSteps.map((step, index) => (
-              <article key={step.title}>
-                <div className="step-meta">
-                  <div className="step-icon">{WORKFLOW_ICONS[index]}</div>
-                  <span className="step-number">{String(index + 1).padStart(2, '0')}</span>
-                </div>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
             ))}
           </div>
         </section>

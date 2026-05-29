@@ -344,6 +344,90 @@ a {
   margin-top: 28px;
 }
 
+.hero-workflow {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 56px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.hero-workflow-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.hero-workflow-link {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-workflow-link:hover {
+  color: var(--accent-warm);
+}
+
+.hero-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+
+.hero-workflow-card {
+  min-width: 0;
+  padding: 0 24px 0 0;
+}
+
+.hero-workflow-card + .hero-workflow-card {
+  padding-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-workflow-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.hero-workflow-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 78, 57, 0.24);
+  background: rgba(255, 78, 57, 0.08);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-workflow-number {
+  display: inline-flex;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.hero-workflow-card h3 {
+  font-size: 1rem;
+  line-height: 1.42;
+  margin-bottom: 10px;
+}
+
+.hero-workflow-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .metrics {
   margin: 30px 0 0;
   display: grid;
@@ -1656,6 +1740,22 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hero-workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .hero-workflow-card,
+  .hero-workflow-card + .hero-workflow-card {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .hero-workflow-card {
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
   .results-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1741,6 +1841,20 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .hero-workflow-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-workflow {
+    margin-top: 44px;
+  }
+
+  .hero-workflow-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
   .comparison-arrow {
     transform: rotate(90deg);
   }
@@ -1793,5 +1907,391 @@ a {
   .form-grid select,
   .form-message textarea {
     padding: 12px 13px;
+  }
+}
+
+/* =====================================================================
+   KLAR THEME ADAPTATION LAYER
+   Applies theme-sample visual direction to existing emailShield content
+   ===================================================================== */
+
+:root {
+  color-scheme: dark;
+  --bg: #111111;
+  --bg-soft: #161616;
+  --panel: #1b1b1b;
+  --panel-strong: #141414;
+  --text: #ffffff;
+  --muted: #b5b5ba;
+  --faint: #8a8a8e;
+  --line: rgba(255, 255, 255, 0.16);
+  --accent: #ff4e39;
+  --accent-strong: #ff6b59;
+  --accent-warm: #ff8a6e;
+  --danger: #ff6b59;
+  --success: #68d391;
+  --shadow: 0 20px 48px rgba(0, 0, 0, 0.38);
+  --radius-xl: 2rem;
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --shell: min(1240px, calc(100vw - 40px));
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background: #111111;
+  color: #ffffff;
+}
+
+body::before,
+body::after,
+.backdrop {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+.brand-text {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 18px 0;
+  background: rgba(17, 17, 17, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.brand-mark {
+  background: var(--accent);
+  color: #111111;
+  box-shadow: none;
+}
+
+.brand-mark svg {
+  stroke: #111111;
+}
+
+.nav {
+  color: #b5b5ba;
+}
+
+.nav a:hover,
+.panel-footer a:hover,
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.lang-switch {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  color: #b5b5ba;
+}
+
+.lang-switch .active {
+  background: rgba(255, 78, 57, 0.16);
+  color: #ffffff;
+}
+
+.button {
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 10px 28px rgba(255, 78, 57, 0.22);
+}
+
+.button-primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  box-shadow: 0 14px 34px rgba(255, 78, 57, 0.28);
+  transform: translateY(-1px);
+}
+
+.button-secondary,
+.button-ghost {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: transparent;
+  color: #ffffff;
+}
+
+.button-secondary:hover,
+.button-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hero {
+  padding-top: 62px;
+  gap: 28px;
+}
+
+.hero h1 {
+  line-height: 0.96;
+}
+
+.eyebrow,
+.kicker,
+.price-label,
+.comparison-label,
+.small-copy {
+  color: #d0d0d4;
+}
+
+.eyebrow {
+  letter-spacing: 0.12em;
+}
+
+.lede,
+.feature-card p,
+.steps p,
+.faq-answer,
+.contact-intro p,
+.partner-item p,
+.pricing-tiers li,
+.result-card p,
+.footer p {
+  color: #b5b5ba;
+}
+
+.section {
+  padding-top: 88px;
+}
+
+.hero,
+.section,
+.results-section,
+.contact {
+  position: relative;
+  z-index: 0;
+  padding-bottom: 88px;
+}
+
+.hero::before,
+.section::before,
+.results-section::before,
+.contact::before,
+.pricing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  background: #111111;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.hero::before {
+  border-top: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.78), transparent 92%);
+  opacity: 0.55;
+}
+
+#product,
+#trust,
+#partners,
+#faq,
+#results,
+#contact,
+.pricing,
+#workflow,
+#guides {
+  margin-top: 0;
+}
+
+.section-heading h2 {
+  line-height: 1.05;
+}
+
+.section-rule {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+}
+
+.hero-panel,
+.feature-card,
+.steps article,
+.price-card,
+.contact,
+.stat-item,
+.faq-item,
+.partner-item,
+.partner-cta-box,
+.result-card,
+.contact-form-wrap {
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0.98), rgba(20, 20, 20, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow);
+  backdrop-filter: none;
+}
+
+.feature-card,
+.steps article,
+.faq-item,
+.partner-item,
+.result-card {
+  border-radius: 1.5rem;
+}
+
+.feature-card:hover,
+.partner-item:hover,
+.faq-item:hover {
+  border-color: rgba(255, 78, 57, 0.46);
+  transform: translateY(-2px);
+}
+
+.product-grid {
+  gap: 0;
+}
+
+.product-grid .feature-card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 30px 28px;
+}
+
+.product-grid .feature-card:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.product-grid .feature-card:nth-child(n + 3) {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.product-grid .feature-card:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.015);
+  box-shadow: none;
+}
+
+.card-icon,
+.step-icon {
+  background: rgba(255, 78, 57, 0.1);
+  border-color: rgba(255, 78, 57, 0.26);
+  color: var(--accent);
+}
+
+.stats-band {
+  padding-top: 32px;
+}
+
+.stat-num,
+.result-card strong,
+.price {
+  color: var(--accent);
+}
+
+.spoof-badge,
+.pill-danger {
+  color: #ffb8b8;
+  border-color: rgba(255, 95, 95, 0.32);
+  background: rgba(255, 95, 95, 0.14);
+}
+
+.signal-list li::before {
+  background: var(--accent);
+}
+
+.pricing .price-card {
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0.98), rgba(20, 20, 20, 0.98));
+}
+
+.pricing-tiers li {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.seo-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.seo-link:hover {
+  color: var(--accent-warm);
+}
+
+.form-grid input,
+.form-grid select,
+.form-message textarea {
+  background: #121212;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-message textarea:focus {
+  border-color: rgba(255, 78, 57, 0.52);
+  box-shadow: 0 0 0 3px rgba(255, 78, 57, 0.12);
+}
+
+.footer {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.footer-copy,
+.footer-links a {
+  color: #8a8a8e;
+}
+
+.faq-item[open] .faq-chevron,
+.faq-item[open] summary,
+.panel-footer a,
+.sender-domain,
+.step-number {
+  color: var(--accent);
+}
+
+.faq-item:hover .faq-chevron,
+.panel-footer a:hover {
+  color: var(--accent-warm);
+}
+
+@media (max-width: 992px) {
+  .topbar {
+    position: static;
+    backdrop-filter: none;
+  }
+
+  .hero {
+    padding-top: 44px;
+  }
+
+  .hero,
+  .section,
+  .results-section,
+  .contact {
+    padding-bottom: 72px;
   }
 }
