@@ -1073,7 +1073,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
 
         <hr className="shell section-rule" />
 
-        <section className="shell reveal" aria-label={copy.efficiency.eyebrow}>
+        <section className="shell reveal stats-strip-section" aria-label={copy.efficiency.eyebrow}>
           <div className="stats-band">
             {STATS.map((s) => (
               <div className="stat-item" key={s.num}>
@@ -1089,7 +1089,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
             <p className="eyebrow">{copy.security.eyebrow}</p>
             <h2>{copy.trust.whyTitle}</h2>
           </div>
-          <div className="feature-grid">
+          <div className="feature-grid product-grid">
             {copy.security.cards.map((card, i) => (
               <article className="feature-card" key={card.title}>
                 <div className="card-icon">{SECURITY_ICONS[i]}</div>
@@ -1136,7 +1136,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
             <p className="eyebrow">{copy.seo.eyebrow}</p>
             <h2>{copy.seo.title}</h2>
           </div>
-          <div className="feature-grid">
+          <div className="feature-grid product-grid">
             {copy.seo.items.map((item) => (
               <article className="feature-card" key={item.href}>
                 <h3>{item.title}</h3>
@@ -1197,7 +1197,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
             <h2>{copy.results.title}</h2>
             <p className="lede" style={{ marginTop: 14 }}>{copy.results.lede}</p>
           </div>
-          <div className="results-grid" aria-label={copy.results.eyebrow}>
+          <div className="results-grid results-strip-grid" aria-label={copy.results.eyebrow}>
             {copy.results.items.map((item) => (
               <article className="result-card" key={item.value + item.label}>
                 <strong>{item.value}</strong>

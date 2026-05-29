@@ -1416,6 +1416,13 @@ a {
   padding-top: 48px;
 }
 
+.stats-strip-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
 .stat-item {
   padding: 24px 20px;
   border-radius: var(--radius-md);
@@ -2097,6 +2104,10 @@ h3,
   border-top: 0;
 }
 
+#trust::before {
+  border-top: 0;
+}
+
 .hero::after {
   content: "";
   position: absolute;
@@ -2202,7 +2213,50 @@ h3,
 }
 
 .stats-band {
-  padding-top: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.stats-strip-section .stats-band {
+  gap: 28px;
+}
+
+.stats-strip-section .stat-item {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.stats-strip-section .stat-item p {
+  margin-top: 10px;
+}
+
+.results-strip-grid {
+  gap: 28px;
+}
+
+.results-strip-grid .result-card {
+  padding: 18px 18px 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(255, 255, 255, 0.92);
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.results-strip-grid .result-card strong {
+  margin-bottom: 10px;
+  letter-spacing: -0.04em;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  color: #ffffff;
+}
+
+.results-strip-grid .result-card p {
+  max-width: 22ch;
 }
 
 .stat-num,
