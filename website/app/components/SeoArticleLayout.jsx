@@ -15,7 +15,7 @@ export default function SeoArticleLayout({
 
   const copy = isEn
     ? {
-        homeAria: 'emailShield home',
+        homeAria: 'Shield home',
         primaryNavAria: 'Primary navigation',
         languageSwitcherAria: 'Language switcher',
         navProduct: 'Product',
@@ -24,11 +24,11 @@ export default function SeoArticleLayout({
         navFaq: 'FAQ',
         requestDemo: 'Request demo',
         backHome: 'Back to homepage',
-        footerLine1: 'emailShield. BEC protection for SMBs.',
+        footerLine1: 'Shield. BEC protection for SMBs.',
         footerLine2: 'Built from the current MVP positioning and product docs.',
       }
     : {
-        homeAria: 'Почетна страница на emailShield',
+        homeAria: 'Почетна страница на Shield',
         primaryNavAria: 'Главна навигација',
         languageSwitcherAria: 'Избор на јазик',
         navProduct: 'Продукт',
@@ -37,7 +37,7 @@ export default function SeoArticleLayout({
         navFaq: 'ЧПП',
         requestDemo: 'Побарај демо',
         backHome: 'Назад на почетна',
-        footerLine1: 'emailShield. ДЕИ заштита за мали и средни бизниси.',
+        footerLine1: 'Shield. ДЕИ заштита за мали и средни бизниси.',
         footerLine2: 'Изградено врз основа на тековното MVP позиционирање и продукт документација.',
       };
 
@@ -50,8 +50,7 @@ export default function SeoArticleLayout({
 
       <header className="shell topbar">
         <a className="brand" href={homeHref} aria-label={copy.homeAria}>
-          <span className="brand-mark">e</span>
-          <span className="brand-text">emailShield</span>
+          <img src="/logo.svg" alt="Shield" width="128" height="35" />
         </a>
 
         <nav className="nav" aria-label={copy.primaryNavAria}>

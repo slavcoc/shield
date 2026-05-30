@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://emailshield.mk';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shield.mk';
 
 export default function robots() {
   return {

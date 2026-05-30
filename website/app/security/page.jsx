@@ -6,7 +6,7 @@ export function generateMetadata({ searchParams }) {
   return {
     title: isEn ? 'Security Overview' : 'Безбедносен преглед',
     description: isEn
-      ? 'Security architecture overview for emailShield invoice and payment fraud detection workflows.'
+      'Security architecture overview for Shield invoice and payment fraud detection workflows.'
       : 'Преглед на безбедносната архитектура за процес на детекција на измами со фактури и плаќања.',
     alternates: {
       canonical: '/security',
@@ -22,7 +22,7 @@ export default function SecurityPage({ searchParams }) {
         eyebrow: 'Security',
         title: 'Security overview for invoice and payment fraud prevention',
         lede:
-          'emailShield combines automated detection, tenant controls, and auditable decision workflows to reduce payment fraud risk before approvals are finalized.',
+          'Shield combines automated detection, tenant controls, and auditable decision workflows to reduce payment fraud risk before approvals are finalized.',
         cta: 'Talk to sales',
         block1: 'Detection and response model',
         block1a: 'Invoice and payment-related email signals are analyzed automatically for fraud indicators.',
@@ -37,7 +37,7 @@ export default function SecurityPage({ searchParams }) {
         eyebrow: 'Безбедност',
         title: 'Безбедносен преглед за спречување измами со фактури и плаќања',
         lede:
-          'emailShield комбинира автоматска детекција, контроли по клиент и ревизиска трага за одлуки за да го намали ризикот пред одобрување плаќања.',
+          'Shield комбинира автоматска детекција, контроли по клиент и ревизиска трага за одлуки за да го намали ризикот пред одобрување плаќања.',
         cta: 'Контактирај продажба',
         block1: 'Модел за детекција и реакција',
         block1a: 'Сигналите од е-пошта поврзани со фактури и плаќања се анализираат автоматски за индикатори на измама.',

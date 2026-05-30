@@ -1,7 +1,7 @@
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://emailshield.mk';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shield.mk';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,11 +18,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'emailShield | ДЕИ и заштита од деловни измами',
-    template: '%s | emailShield',
+    default: 'Shield | ДЕИ и заштита од деловни измами',
+    template: '%s | Shield',
   },
   description:
-    'emailShield им помага на малите и средни компании да спречат деловни емаил измами (ДЕИ), имперсонација и измами со социјален инженеринг пред да настане штета.',
+    'Shield им помага на малите и средни компании да спречат деловни емаил измами (ДЕИ), имперсонација и измами со социјален инженеринг пред да настане штета.',
   keywords: [
     'business email compromise',
     'bec protection',
@@ -45,10 +45,10 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: '/',
-    siteName: 'emailShield',
+    siteName: 'Shield',
     locale: 'mk_MK',
     alternateLocale: ['en_US'],
-    title: 'emailShield | ДЕИ и заштита од деловни измами',
+    title: 'Shield | ДЕИ и заштита од деловни измами',
     description:
       'Спречете ДЕИ и измами со лажно претставување пред да се споделат податоци или да се префрлат средства.',
     images: [
@@ -56,13 +56,13 @@ export const metadata = {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'emailShield BEC protection',
+        alt: 'Shield BEC protection',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'emailShield | BEC Protection',
+    title: 'Shield | BEC Protection',
     description:
       'Protect your business from deception, impersonation, and social engineering in business email.',
     images: ['/og-image.svg'],
@@ -79,7 +79,11 @@ export const metadata = {
     },
   },
   category: 'Cybersecurity',
-  applicationName: 'emailShield',
+  applicationName: 'Shield',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }) {

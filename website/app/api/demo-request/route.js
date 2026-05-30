@@ -4,7 +4,7 @@ const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 5;
 
 function getRateLimitStore() {
-  const globalKey = '__emailshield_demo_rate_limit__';
+  const globalKey = '__shield_demo_rate_limit__';
   if (!globalThis[globalKey]) {
     globalThis[globalKey] = new Map();
   }
@@ -57,7 +57,12 @@ export async function POST(request) {
   const name = typeof payload.name === 'string' ? payload.name.trim() : '';
   const email = typeof payload.email === 'string' ? payload.email.trim() : '';
   const company = typeof payload.company === 'string' ? payload.company.trim() : '';
-  const role = typeof payload.role === 'string' ? payload.role.trim() : '';
+  const packageInterest =
+    typeof payload.package === 'string'
+      ? payload.package.trim()
+      : typeof payload.role === 'string'
+        ? payload.role.trim()
+        : '';
   const website = typeof payload.website === 'string' ? payload.website.trim() : '';
   const message = typeof payload.message === 'string' ? payload.message.trim() : '';
 
@@ -72,9 +77,9 @@ export async function POST(request) {
     );
   }
 
-  if (!name || !isEmail(email) || !company || !role) {
+  if (!name || !isEmail(email) || !company || !packageInterest) {
     return NextResponse.json(
-      { error: 'Name, company, role, and a valid email address are required.' },
+      { error: 'Name, company, package, and a valid email address are required.' },
       { status: 400 }
     );
   }
@@ -83,11 +88,12 @@ export async function POST(request) {
   const contactEmail = process.env.DEMO_REQUEST_TO_EMAIL;
 
   const submission = {
-    source: 'emailShield website',
+    source: 'Shield website',
     name,
     email,
     company,
-    role,
+    role: packageInterest,
+    package: packageInterest,
     message,
     receivedAt: new Date().toISOString(),
   };

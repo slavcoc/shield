@@ -1,20 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="emailShield BEC protection">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Shield BEC protection">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#07111f" />
       <stop offset="100%" stop-color="#0d1a2d" />
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#79d6ff" />
-      <stop offset="100%" stop-color="#47b4ef" />
+      <stop offset="0%" stop-color="#ff4e39" />
+      <stop offset="100%" stop-color="#ff6b59" />
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)" />
-  <circle cx="1030" cy="110" r="220" fill="#79d6ff" opacity="0.12" />
+  <circle cx="1030" cy="110" r="220" fill="#ff4e39" opacity="0.12" />
   <circle cx="120" cy="-40" r="220" fill="#f4a261" opacity="0.1" />
-  <rect x="82" y="88" width="64" height="64" rx="16" fill="url(#accent)" />
-  <text x="114" y="129" font-family="Arial, sans-serif" font-size="34" text-anchor="middle" fill="#00111d" font-weight="700">e</text>
-  <text x="170" y="132" font-family="Arial, sans-serif" font-size="40" fill="#f5f7fb" font-weight="700">emailShield</text>
+  <!-- Shield logo -->
+  <g transform="translate(82, 82)">
+    <path d="M32 4 L60 14 L60 40 Q60 56 32 68 Q4 56 4 40 L4 14 Z" fill="url(#accent)"/>
+    <polyline points="18,40 28,50 46,30" fill="none" stroke="#00111d" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="158" y="134" font-family="Arial, sans-serif" font-size="46" fill="#f5f7fb" font-weight="700">Shield</text>
   <text x="82" y="250" font-family="Arial, sans-serif" font-size="62" fill="#f5f7fb" font-weight="700">BEC Protection for SMBs</text>
   <text x="82" y="320" font-family="Arial, sans-serif" font-size="34" fill="#a9b6c7">Stop deception, impersonation, and social engineering attacks</text>
   <text x="82" y="370" font-family="Arial, sans-serif" font-size="34" fill="#a9b6c7">before sensitive data is shared or funds are sent.</text>

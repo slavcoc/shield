@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 44" width="164" height="44" role="img" aria-label="Shield">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4e39"/>
+      <stop offset="100%" stop-color="#ff6b59"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield icon -->
+  <path d="M22 2 L38 8 L38 24 Q38 35 22 42 Q6 35 6 24 L6 8 Z" fill="url(#sg)"/>
+  <!-- Checkmark inside shield -->
+  <polyline points="14,23 20,29 31,17" fill="none" stroke="#07111f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Shield wordmark -->
+  <text x="50" y="29" font-family="'Space Grotesk', 'Arial', sans-serif" font-size="23" font-weight="700" fill="#f5f7fb" letter-spacing="-0.4">Shield</text>
+</svg>

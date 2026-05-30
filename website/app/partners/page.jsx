@@ -27,10 +27,10 @@ export function generateMetadata({ searchParams }) {
   const isEn = searchParams?.lang === 'en';
 
   return {
-    title: isEn ? 'Partners | emailShield' : 'Партнери | emailShield',
+    title: isEn ? 'Partners | Shield' : 'Партнери | Shield',
     description: isEn
-      ? 'Offer emailShield to your clients and build recurring revenue with practical fraud protection for business email workflows.'
-      : 'Понудете emailShield на клиентите и развивајте повторлив приход со практична заштита од измама во деловна е-пошта.',
+      ? 'Offer Shield to your clients and build recurring revenue with practical fraud protection for business email workflows.'
+      : 'Понудете Shield на клиентите и развивајте повторлив приход со практична заштита од измама во деловна е-пошта.',
     alternates: {
       canonical: '/partners',
     },
@@ -44,7 +44,7 @@ export default function PartnersPage({ searchParams }) {
     ? {
         eyebrow: 'Partners',
         title: 'Reduce fraud risk for clients and add recurring revenue.',
-        lede: 'Offer emailShield as a trusted add-on service and help companies stop costly payment-fraud attempts before approval.',
+        lede: 'Offer Shield as a trusted add-on service and help companies stop costly payment-fraud attempts before approval.',
         cta: 'Become a partner',
         visualTopLeft: 'Partner network',
         visualTopRight: 'New revenue stream',
@@ -59,7 +59,7 @@ export default function PartnersPage({ searchParams }) {
     : {
         eyebrow: 'Партнери',
         title: 'Намалете ризик од измама за клиентите и додадете повторлив приход.',
-        lede: 'Понудете го emailShield како доверлива дополнителна услуга и помогнете им на компаниите да спречат скапи измами пред одобрување на уплата.',
+        lede: 'Понудете го Shield како доверлива дополнителна услуга и помогнете им на компаниите да спречат скапи измами пред одобрување на уплата.',
         cta: 'Станете партнер',
         visualTopLeft: 'Партнерска мрежа',
         visualTopRight: 'Нов извор на приходи',

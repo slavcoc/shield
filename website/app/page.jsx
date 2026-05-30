@@ -12,13 +12,13 @@ const CONTENT = {
       requestDemo: 'Закажете бесплатна консултација',
       primaryNavAria: 'Главна навигација',
       languageSwitcherAria: 'Избор на јазик',
-      homeAria: 'Почетна страница на emailShield',
+      homeAria: 'Почетна страница на Shield',
     },
     hero: {
       eyebrow: 'Заштита од деловни емаил измами (ДЕИ)',
       title: 'Заштитете го вашиот бизнис со интелигентна заштита од измами.',
       lede:
-        'emailShield открива ДЕИ (деловни емаил измами) напади во деловна е-пошта. Системот препознава лажно претставување, измамнички барања за плаќање и пораки што бараат итна реакција без проверка.',
+        'Shield открива ДЕИ (деловни емаил измами) напади во деловна е-пошта. Системот препознава лажно претставување, измамнички барања за плаќање и пораки што бараат итна реакција без проверка.',
       ctaPrimary: 'Закажете бесплатна консултација',
       metrics: {
         focusLabel: 'Главен фокус',
@@ -49,7 +49,7 @@ const CONTENT = {
       aria: 'Резиме на позиционирање',
       whyTitle: 'Зошто може да му верувате',
       whyText:
-        'emailShield е направен за чувствителни деловни процеси. ВИ (AI) помага брзо да се открие ризик, а пристапот до податоци е ограничен и контролиран.',
+        'Shield е направен за чувствителни деловни процеси. ВИ (AI) помага брзо да се открие ризик, а пристапот до податоци е ограничен и контролиран.',
       buyerTitle: 'Што е најважно за клиентите',
       buyerText:
         'Клиентите не бараат само аларми. Тие бараат јасни правила за податоци, ревизиска трага и лесна проверка на секоја одлука.',
@@ -209,6 +209,8 @@ const CONTENT = {
       eyebrow: 'Цени',
       title: 'Пакети за месечна претплата',
       lede: 'Изберете пакет според бројот на емаил сандачиња, автоматизацијата и нивото на поддршка што ви треба.',
+      partnerHint: 'Работите со повеќе клиентски компании? Побарајте партнерски услови и централизирано управување.',
+      partnerCta: 'Партнерски модел',
       popularLabel: 'Најпопуларен',
       packages: [
         {
@@ -247,10 +249,10 @@ const CONTENT = {
           period: 'месечно',
           badge: 'За повеќе тимови',
           delivery: 'Веб админ + desktop app',
-          supportNote: 'Приоритетна поддршка, onboarding и повисока оперативна контрола.',
+          supportNote: 'Приоритетна поддршка, onboarding и повисока оперативна контрола со централизирано управување за повеќе клиенти.',
           cta: 'Разгледајте Scale',
           features: [
-            '21+ емаил сандачиња',
+            'До 100 емаил сандачиња',
             'Сè од Growth пакетот',
             'Централизирани политики и улоги',
             'Приоритетна поддршка и onboarding',
@@ -344,7 +346,7 @@ const CONTENT = {
       name: 'Име',
       email: 'Деловен емаил',
       company: 'Компанија',
-      role: 'Улога',
+      package: 'Пакет',
       message: 'Со што можеме да помогнеме?',
       placeholder: 'Накратко опишете го вашиот тим и што сакате прво да заштитите.',
       submitIdle: 'Закажете бесплатна консултација',
@@ -356,14 +358,19 @@ const CONTENT = {
         'Барањето е примено. Ќе ве контактираме во најкраток рок.',
       errorStatus: 'Се појави грешка. Обидете се повторно.',
       responseNote: '',
-      roles: ['Сопственик / директор', 'Оперативен менаџер', 'ИТ администратор', 'Финансиски менаџер'],
+      packages: [
+        'Start (до 2 емаил сандачиња)',
+        'Growth (до 15 емаил сандачиња)',
+        'Scale (до 100 емаил сандачиња)',
+        'Партнер: Managed Scale (повеќе клиенти)',
+      ],
       trustLinks: {
         privacy: 'Политика за приватност',
         security: 'Безбедносен преглед',
       },
     },
     footer: {
-      line1: 'emailShield. ДЕИ заштита за мали и средни бизниси.',
+      line1: 'Shield. ДЕИ заштита за мали и средни бизниси.',
       line2: 'Намалете ризик од измама со јасни предупредувања и контроли пред критични деловни одлуки.',
     },
   },
@@ -376,13 +383,13 @@ const CONTENT = {
       requestDemo: 'Schedule a Free Consultation',
       primaryNavAria: 'Primary navigation',
       languageSwitcherAria: 'Language switcher',
-      homeAria: 'emailShield home',
+      homeAria: 'Shield home',
     },
     hero: {
       eyebrow: 'BEC and social engineering protection for SMBs',
       title: 'Protect Your Business with Intelligent Fraud Prevention',
       lede:
-        'emailShield detects business email compromise (BEC) patterns in real time. It flags impersonation, deceptive requests, and urgency pressure before teams share sensitive data or move funds.',
+        'Shield detects business email compromise (BEC) patterns in real time. It flags impersonation, deceptive requests, and urgency pressure before teams share sensitive data or move funds.',
       ctaPrimary: 'Schedule a Free Consultation',
       metrics: {
         focusLabel: 'Primary focus',
@@ -410,7 +417,7 @@ const CONTENT = {
       aria: 'Positioning summary',
       whyTitle: 'Why you can trust it',
       whyText:
-        'emailShield is built for sensitive business workflows. AI helps detect risk quickly, while data access stays controlled and auditable.',
+        'Shield is built for sensitive business workflows. AI helps detect risk quickly, while data access stays controlled and auditable.',
       buyerTitle: 'What customers care about most',
       buyerText:
         'Teams need more than alerts. They need clear privacy safeguards, simple controls, and a visible audit trail.',
@@ -558,7 +565,7 @@ const CONTENT = {
       eyebrow: 'Partners',
       title: 'Reduce fraud risk without slowing your team.',
       text:
-        'Offer emailShield as a trusted add-on service and help clients avoid costly BEC scams.',
+        'Offer Shield as a trusted add-on service and help clients avoid costly BEC scams.',
       items: [
         { title: 'Recurring commission', text: 'Partner-friendly revenue share' },
         { title: 'Internal use', text: 'Free use for partner teams' },
@@ -570,6 +577,8 @@ const CONTENT = {
       eyebrow: 'Pricing',
       title: 'Clear monthly packages for every team size',
       lede: 'Choose the package that matches your mailbox count, workflow complexity, and support needs.',
+      partnerHint: 'Managing multiple clients? Ask about partner terms and centralized tenant management.',
+      partnerCta: 'Partner model',
       popularLabel: 'Most popular',
       packages: [
         {
@@ -608,10 +617,10 @@ const CONTENT = {
           period: 'per month',
           badge: 'For multi-team operations',
           delivery: 'Web admin + desktop app',
-          supportNote: 'Priority support, onboarding, and stronger operational control.',
+          supportNote: 'Priority support, onboarding, and stronger operational control with centralized management for multiple clients.',
           cta: 'Review Scale',
           features: [
-            '21+ mailboxes',
+            'Up to 100 mailboxes',
             'Everything in Growth',
             'Centralized policies and roles',
             'Priority support and onboarding',
@@ -705,7 +714,7 @@ const CONTENT = {
       name: 'Name',
       email: 'Work email',
       company: 'Company',
-      role: 'Role',
+      package: 'Package',
       message: 'What do you need help with?',
       placeholder: 'Tell us about your team and what you want to protect first.',
       submitIdle: 'Schedule a Free Consultation',
@@ -717,14 +726,19 @@ const CONTENT = {
         'Thanks. We captured your request and will contact you shortly.',
       errorStatus: 'Something went wrong. Please try again.',
       responseNote: '',
-      roles: ['Owner / executive', 'Operations manager', 'IT administrator', 'Finance manager'],
+      packages: [
+        'Start (up to 2 mailboxes)',
+        'Growth (up to 15 mailboxes)',
+        'Scale (up to 100 mailboxes)',
+        'Partner: Managed Scale (multi-client)',
+      ],
       trustLinks: {
         privacy: 'Privacy policy',
         security: 'Security overview',
       },
     },
     footer: {
-      line1: 'emailShield. BEC protection for SMBs.',
+      line1: 'Shield. BEC protection for SMBs.',
       line2: 'Help your team stop email scams with clear alerts before action.',
     },
   },
@@ -829,7 +843,7 @@ const SECURITY_ICONS = [ICONS.eye, ICONS.database, ICONS.key, ICONS.code];
 const WORKFLOW_ICONS = [ICONS.mail, ICONS.zap, ICONS.flag, ICONS.bell];
 
 export default function HomePage({ initialLanguage = 'mk' }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://emailshield.mk';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shield.mk';
   const [language, setLanguage] = useState(initialLanguage);
   const [isTopbarScrolled, setIsTopbarScrolled] = useState(false);
   const copy = CONTENT[language];
@@ -838,7 +852,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
     name: '',
     email: '',
     company: '',
-    role: CONTENT.mk.contact.roles[0],
+    package: CONTENT.mk.contact.packages[0],
     website: '',
     message: '',
   });
@@ -903,7 +917,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
   useEffect(() => {
     setFormState((prev) => ({
       ...prev,
-      role: copy.contact.roles.includes(prev.role) ? prev.role : copy.contact.roles[0],
+      package: copy.contact.packages.includes(prev.package) ? prev.package : copy.contact.packages[0],
     }));
 
     setSubmitState((prev) => ({
@@ -922,7 +936,10 @@ export default function HomePage({ initialLanguage = 'mk' }) {
         headers: {
           'content-type': 'application/json',
         },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({
+          ...formState,
+          role: formState.package,
+        }),
       });
 
       const data = await response.json();
@@ -935,7 +952,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
         name: '',
         email: '',
         company: '',
-        role: copy.contact.roles[0],
+        package: copy.contact.packages[0],
         website: '',
         message: '',
       });
@@ -959,13 +976,13 @@ export default function HomePage({ initialLanguage = 'mk' }) {
     '@graph': [
       {
         '@type': 'WebSite',
-        name: 'emailShield',
+        name: 'Shield',
         url: siteUrl,
         inLanguage: language === 'mk' ? 'mk-MK' : 'en-US',
       },
       {
         '@type': 'Organization',
-        name: 'emailShield',
+        name: 'Shield',
         url: siteUrl,
         description: copy.hero.lede,
           contactPoint: [
@@ -1001,12 +1018,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
 
       <header className={`shell topbar${isTopbarScrolled ? ' topbar-scrolled' : ''}`}>
         <a className="brand" href="#hero" aria-label={copy.nav.homeAria}>
-          <span className="brand-mark">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00111d" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </span>
-          <span className="brand-text">emailShield</span>
+          <img src="/logo.svg" alt="Shield" width="128" height="35" />
         </a>
 
         <nav className="nav" aria-label={copy.nav.primaryNavAria}>
@@ -1231,6 +1243,10 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               </article>
             ))}
           </div>
+          <div className="pricing-partner-note" role="note">
+            <p>{copy.pricing.partnerHint}</p>
+            <a href="#contact">{copy.pricing.partnerCta}</a>
+          </div>
         </section>
 
         <section className="shell section reveal" id="faq">
@@ -1303,15 +1319,15 @@ export default function HomePage({ initialLanguage = 'mk' }) {
                   />
                 </label>
                 <label>
-                  <span>{copy.contact.role}</span>
+                  <span>{copy.contact.package}</span>
                   <select
-                    name="role"
-                    value={formState.role}
-                    onChange={(event) => setFormState({ ...formState, role: event.target.value })}
+                    name="package"
+                    value={formState.package}
+                    onChange={(event) => setFormState({ ...formState, package: event.target.value })}
                     required
                   >
-                    {copy.contact.roles.map((role) => (
-                      <option key={role}>{role}</option>
+                    {copy.contact.packages.map((pkg) => (
+                      <option key={pkg}>{pkg}</option>
                     ))}
                   </select>
                 </label>
@@ -1361,7 +1377,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
       <footer className="shell footer">
         <div className="footer-main">
           <div className="footer-brand">
-            <strong>emailShield</strong>
+            <strong>Shield</strong>
             <p>{copy.footer.line1}</p>
             <p>{copy.footer.line2}</p>
           </div>
@@ -1370,7 +1386,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               <a href={language === 'en' ? '/en/privacy' : '/privacy'}>{copy.contact.trustLinks.privacy}</a>
               <a href={language === 'en' ? '/en/security' : '/security'}>{copy.contact.trustLinks.security}</a>
             </div>
-            <p className="footer-copy">© {new Date().getFullYear()} emailShield</p>
+            <p className="footer-copy">© {new Date().getFullYear()} Shield</p>
           </div>
         </div>
       </footer>

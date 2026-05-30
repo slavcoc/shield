@@ -6,8 +6,8 @@ export function generateMetadata({ searchParams }) {
   return {
     title: isEn ? 'Privacy Policy' : 'Политика за приватност',
     description: isEn
-      ? 'How emailShield handles data retention, access control, and privacy safeguards for finance workflows.'
-      : 'Како emailShield управува со задржување на податоци, пристап и приватност за финансиски процеси.',
+      ? 'How Shield handles data retention, access control, and privacy safeguards for finance workflows.'
+      : 'Како Shield управува со задржување на податоци, пристап и приватност за финансиски процеси.',
     alternates: {
       canonical: '/privacy',
     },
@@ -22,7 +22,7 @@ export default function PrivacyPage({ searchParams }) {
         eyebrow: 'Privacy',
         title: 'Privacy policy for finance-sensitive email workflows',
         lede:
-          'emailShield is designed to reduce payment fraud risk while keeping data exposure minimal. This page summarizes the operating principles used in the current product scope.',
+          'Shield is designed to reduce payment fraud risk while keeping data exposure minimal. This page summarizes the operating principles used in the current product scope.',
         cta: 'Request a demo',
         block1: 'Data minimization',
         block1a: 'Only data required for alerts, configuration, and audit context is retained.',
@@ -37,7 +37,7 @@ export default function PrivacyPage({ searchParams }) {
         eyebrow: 'Приватност',
         title: 'Политика за приватност за финансиски чувствителни е-пошта процеси',
         lede:
-          'emailShield е дизајниран да го намали ризикот од измами со плаќања со минимална изложеност на податоци. Оваа страница ги сумира оперативните принципи во тековниот опфат на продуктот.',
+          'Shield е дизајниран да го намали ризикот од измами со плаќања со минимална изложеност на податоци. Оваа страница ги сумира оперативните принципи во тековниот опфат на продуктот.',
         cta: 'Побарај демо',
         block1: 'Минимално задржување податоци',
         block1a: 'Се задржуваат само податоци потребни за аларми, конфигурација и ревизиска трага.',

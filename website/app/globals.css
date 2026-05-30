@@ -1024,6 +1024,32 @@ a {
   justify-self: start;
 }
 
+.pricing-partner-note {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.pricing-partner-note p {
+  margin: 0;
+}
+
+.pricing-partner-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pricing-partner-note a:hover {
+  color: var(--accent-warm);
+}
+
 .price-main,
 .price-side {
   min-width: 0;
@@ -2161,7 +2187,7 @@ a {
 
 /* =====================================================================
    KLAR THEME ADAPTATION LAYER
-   Applies theme-sample visual direction to existing emailShield content
+   Applies theme-sample visual direction to existing Shield content
    ===================================================================== */
 
 :root {

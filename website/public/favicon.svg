@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 36" width="32" height="36" role="img" aria-label="Shield">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4e39"/>
+      <stop offset="100%" stop-color="#ff6b59"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield shape -->
+  <path d="M16 1 L30 6.5 L30 21 Q30 30 16 35 Q2 30 2 21 L2 6.5 Z" fill="url(#fg)"/>
+  <!-- Checkmark inside -->
+  <polyline points="9,19 14,24 24,13" fill="none" stroke="#07111f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
