@@ -18,18 +18,18 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'emailShield | BEC и заштита од деловни измами',
+    default: 'emailShield | ДЕИ и заштита од деловни измами',
     template: '%s | emailShield',
   },
   description:
-    'emailShield им помага на малите и средни компании да спречат business email compromise (BEC), имперсонација и измами со социјален инженеринг пред да настане штета.',
+    'emailShield им помага на малите и средни компании да спречат деловни емаил измами (ДЕИ), имперсонација и измами со социјален инженеринг пред да настане штета.',
   keywords: [
     'business email compromise',
     'bec protection',
     'email impersonation detection',
     'social engineering email attacks',
     'payment instruction fraud',
-    'заштита од BEC',
+    'заштита од ДЕИ',
     'деловна имперсонација',
     'лажна фактура',
     'социјален инженеринг',
@@ -48,9 +48,9 @@ export const metadata = {
     siteName: 'emailShield',
     locale: 'mk_MK',
     alternateLocale: ['en_US'],
-    title: 'emailShield | BEC и заштита од деловни измами',
+    title: 'emailShield | ДЕИ и заштита од деловни измами',
     description:
-      'Спречете BEC и измами со лажно претставување пред да се споделат податоци или да се префрлат средства.',
+      'Спречете ДЕИ и измами со лажно претставување пред да се споделат податоци или да се префрлат средства.',
     images: [
       {
         url: '/og-image.svg',

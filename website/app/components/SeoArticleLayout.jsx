@@ -37,7 +37,7 @@ export default function SeoArticleLayout({
         navFaq: 'ЧПП',
         requestDemo: 'Побарај демо',
         backHome: 'Назад на почетна',
-        footerLine1: 'emailShield. BEC заштита за мали и средни бизниси.',
+        footerLine1: 'emailShield. ДЕИ заштита за мали и средни бизниси.',
         footerLine2: 'Изградено врз основа на тековното MVP позиционирање и продукт документација.',
       };
 

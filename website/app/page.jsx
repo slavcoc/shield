@@ -15,14 +15,14 @@ const CONTENT = {
       homeAria: 'Почетна страница на emailShield',
     },
     hero: {
-      eyebrow: 'Заштита од деловни емаил измами (BEC)',
+      eyebrow: 'Заштита од деловни емаил измами (ДЕИ)',
       title: 'Заштитете го вашиот бизнис со интелигентна заштита од измами.',
       lede:
-        'emailShield открива BEC (business email compromise) напади во деловна е-пошта. Системот препознава лажно претставување, измамнички барања за плаќање и пораки што бараат итна реакција без проверка.',
+        'emailShield открива ДЕИ (деловни емаил измами) напади во деловна е-пошта. Системот препознава лажно претставување, измамнички барања за плаќање и пораки што бараат итна реакција без проверка.',
       ctaPrimary: 'Закажете бесплатна консултација',
       metrics: {
         focusLabel: 'Главен фокус',
-        focusValue: 'BEC, лажно претставување и социјален инженеринг',
+        focusValue: 'ДЕИ, лажно претставување и социјален инженеринг',
         modeLabel: 'Оперативен модел',
         modeValue: 'Означи, провери, потврди',
         audienceLabel: 'За кого е',
@@ -32,13 +32,12 @@ const CONTENT = {
       previewAria: 'Преглед на аларм',
     },
     preview: {
-      title: 'Преглед на сомнителна BEC е-порака',
+      title: 'Преглед на сомнителна ДЕИ емаил порака',
       risk: 'Висок ризик',
-      detectedInMail: 'Откриено во е-пошта',
+      detectedInMail: 'Откриено во емаил',
       approvedAccount: 'Одобрена сметка',
       detectedAccount: 'Откриена сметка',
       signals: [
-        'Лажно претставување како директор или добавувач',
         'Сомнителна промена на инструкции за плаќање',
         'Притисок за итна реакција без проверка',
       ],
@@ -61,7 +60,7 @@ const CONTENT = {
       items: [
         {
           value: '24/7 Без прекин',
-          label: 'автоматски надзор на BEC ризик',
+          label: 'автоматски надзор на ДЕИ ризик',
         },
         {
           value: '3 Слоја Заштита',
@@ -107,7 +106,7 @@ const CONTENT = {
     },
     product: {
       eyebrow: 'Продукт',
-      title: 'Спречете ризични уплати пред да бидат одобрени.',
+      title: 'Заштитете ги плаќањата од измама.',
       cards: [
         {
           title: 'AI детекција на измама и имперсонација',
@@ -118,8 +117,8 @@ const CONTENT = {
           text: 'Ризичните пораки се прикажуваат со јасна причина за тимот брзо да провери дали барањето е легитимно.',
         },
         {
-          title: 'Приватност и трага на одлуки',
-          text: 'Се чуваат само потребни податоци за аларми и ревизија, со јасна евиденција кој и кога одлучил.',
+          title: 'Инстант SMS и емаил аларми',
+          text: 'Штом пристигне сомнителна порака, одговорните лица веднаш добиваат SMS и емаил известување со јасен ризик-сигнал и следен чекор за проверка.',
         },
         {
           title: 'Отворен код и транспарентност',
@@ -152,8 +151,8 @@ const CONTENT = {
           text: 'Се регистрирате и веднаш почнувате.',
         },
         {
-          title: 'Поврзете ја е-поштата',
-          text: 'Ја поврзувате е-поштата, а системот ве води чекор по чекор.',
+          title: 'Поврзете го емаилот',
+          text: 'Го поврзувате емаилот, а системот ве води чекор по чекор.',
         },
         {
           title: 'Додајте ги точните сметки за плаќање',
@@ -164,18 +163,18 @@ const CONTENT = {
       protectionSteps: [
         {
           title: 'Системот ги анализира дојдовните пораки',
-          text: 'Пораките се проверуваат автоматски за BEC сигнали: измама, имперсонација и социјален инженеринг.',
+          text: 'Пораките се проверуваат автоматски за ДЕИ сигнали: измама, имперсонација и социјален инженеринг.',
         },
         {
-          title: 'ВИ + правила проверуваат ризик',
+          title: 'ВИ + правила за проверка на ризик',
           text: 'Се откриваат лажни испраќачи, сомнителни промени и барања за чувствителни податоци или плаќање.',
         },
         {
-          title: 'Означување или карантин во вашиот е-пошта провајдер',
+          title: 'Означување и карантин на сомнителниот емаил',
           text: 'Сомнителните пораки се означуваат или се ставаат во карантин според вашите поставки.',
         },
         {
-          title: 'Известувања преку е-пошта и SMS',
+          title: 'Известувања преку емаил и SMS',
           text: 'Одговорните лица добиваат известувања за да реагираат навреме.',
         },
       ],
@@ -189,8 +188,8 @@ const CONTENT = {
           text: 'Содржината на пораките не е достапна за нашиот тим. Анализата е целосно автоматизирана и поддржана од водечки AI модели.',
         },
         {
-          title: 'Енкрипција во пренос и складирање',
-          text: 'Податоците се шифрираат и додека се пренесуваат и додека се чуваат.',
+          title: 'Поширока заштита од емаил закани',
+          text: 'Штити од phishing линкови, малициозни прилози, кражба на креденцијали, преземени разговори и лажни барања за промена на сметка.',
         },
       ],
     },
@@ -198,7 +197,7 @@ const CONTENT = {
       eyebrow: 'Партнери',
       title: 'Намалете ризик од измама без да го забавите тимот.',
       text:
-        'Понудете го како доверлива дополнителна услуга и помогнете им на клиентите да избегнат скапи BEC измами.',
+        'Понудете го како доверлива дополнителна услуга и помогнете им на клиентите да избегнат скапи ДЕИ измами.',
       items: [
         { title: 'Повторлива провизија', text: 'Партнерски модел со јасна поделба на приходи' },
         { title: 'Интерна употреба', text: 'Бесплатна употреба за вашиот партнерски тим' },
@@ -208,14 +207,55 @@ const CONTENT = {
     pricing: {
       aria: 'Цени',
       eyebrow: 'Цени',
-      title: 'Месечна претплата.',
-      startingRange: 'Почетен опсег',
-      perMonth: 'месечно, според големината на компанијата и нивото на поддршка што ви треба',
-      cta: 'Контактирајте продажба',
-      tiers: [
-        'Почетен: помали деловни тимови со основен мониторинг (1-5 mailbox-и)',
-        'Раст: повеќе сандачиња и повисока фреквенција на аларми (6-20 mailbox-и)',
-        'Проширен: работа со повеќе тимови и централизирана поддршка (21+ mailbox-и)',
+      title: 'Пакети за месечна претплата',
+      lede: 'Изберете пакет според бројот на емаил сандачиња, автоматизацијата и нивото на поддршка што ви треба.',
+      popularLabel: 'Најпопуларен',
+      packages: [
+        {
+          name: 'Start',
+          price: '3.990 ден',
+          period: 'месечно',
+          badge: 'За помали тимови',
+          delivery: 'Веб админ',
+          supportNote: 'Основна поддршка за стартно поставување и вклучување.',
+          cta: 'Почни со Start',
+          features: [
+            'До 2 емаил сандачиња',
+            'ДЕИ детекција и означување',
+            'SMS и емаил аларми',
+            'Основен ревизиски запис',
+          ],
+        },
+        {
+          name: 'Growth',
+          price: '7.990 ден',
+          period: 'месечно',
+          badge: 'Најпопуларен',
+          delivery: 'Веб админ + desktop app',
+          supportNote: 'Поддршка за Growth и Standard, со приоритетни аларми.',
+          cta: 'Изберете Growth',
+          features: [
+            'До 15 емаил сандачиња',
+            'Сè од Start пакетот',
+            'Десктоп апликација за брзи прегледи',
+            'Карантин и приоритетни аларми',
+          ],
+        },
+        {
+          name: 'Scale',
+          price: '14.990 ден',
+          period: 'месечно',
+          badge: 'За повеќе тимови',
+          delivery: 'Веб админ + desktop app',
+          supportNote: 'Приоритетна поддршка, onboarding и повисока оперативна контрола.',
+          cta: 'Разгледајте Scale',
+          features: [
+            '21+ емаил сандачиња',
+            'Сè од Growth пакетот',
+            'Централизирани политики и улоги',
+            'Приоритетна поддршка и onboarding',
+          ],
+        },
       ],
     },
     faq: {
@@ -223,12 +263,12 @@ const CONTENT = {
       title: 'Кратки одговори на најчестите прашања.',
       items: [
         {
-          q: 'Дали ова е целосна заштита за е-пошта?',
-          a: 'Иако нашиот главен фокус е BEC (измами со лажно претставување и социјален инженеринг), апликацијата штити и од phishing линкови, малициозни прилози, обиди за кражба на креденцијали, преземање на постоечки емаил разговори, лажно претставување на домени/испраќачи и сомнителни барања за промена на сметка.',
+          q: 'Дали ова е целосна заштита за емаил?',
+          a: 'Иако нашиот главен фокус е ДЕИ (деловни емаил измами со лажно претставување и социјален инженеринг), апликацијата штити и од phishing линкови, малициозни прилози, обиди за кражба на креденцијали, преземање на постоечки емаил разговори, лажно претставување на домени/испраќачи и сомнителни барања за промена на сметка.',
         },
         {
           q: 'Дали поставувањето е комплицирано?',
-          a: 'Не. Во повеќето случаи се поврзува со постојната е-пошта со неколку чекори.',
+          a: 'Не. Во повеќето случаи се поврзува со постојниот емаил со неколку чекори.',
         },
         {
           q: 'Дали може да се користи на македонски и англиски?',
@@ -246,13 +286,13 @@ const CONTENT = {
     },
     seo: {
       eyebrow: 'Корисни водичи',
-      title: 'Прочитајте практични совети за BEC, имперсонација и измами со плаќања.',
+      title: 'Прочитајте практични совети за ДЕИ, имперсонација и измами со плаќања.',
       items: [
         {
-          title: 'Што е BEC и како да го намалите ризикот',
+          title: 'Што е ДЕИ и како да го намалите ризикот',
           text: 'Едноставни контроли против измама, лажно претставување и социјален инженеринг.',
           href: '/business-email-compromise',
-          cta: 'Отвори BEC водич',
+          cta: 'Отвори ДЕИ водич',
         },
         {
           title: 'Како да спречите измама со фактури',
@@ -261,7 +301,7 @@ const CONTENT = {
           cta: 'Отвори водич',
         },
         {
-          title: 'Како да препознаете лажна фактура по е-пошта',
+          title: 'Како да препознаете лажна фактура по емаил',
           text: 'Најважни знаци што треба да ги проверите пред плаќање.',
           href: '/fake-invoice-email',
           cta: 'Види знаци',
@@ -302,7 +342,7 @@ const CONTENT = {
       text:
         'Оставете ги вашите податоци и ќе ви се јавиме за да ги разгледаме вашите потреби.',
       name: 'Име',
-      email: 'Деловна е-пошта',
+      email: 'Деловен емаил',
       company: 'Компанија',
       role: 'Улога',
       message: 'Со што можеме да помогнеме?',
@@ -323,7 +363,7 @@ const CONTENT = {
       },
     },
     footer: {
-      line1: 'emailShield. BEC заштита за мали и средни бизниси.',
+      line1: 'emailShield. ДЕИ заштита за мали и средни бизниси.',
       line2: 'Намалете ризик од измама со јасни предупредувања и контроли пред критични деловни одлуки.',
     },
   },
@@ -361,7 +401,7 @@ const CONTENT = {
       detectedInMail: 'Detected in incoming email',
       approvedAccount: 'Approved account',
       detectedAccount: 'Detected account',
-      signals: ['Executive/vendor impersonation', 'Payment instruction change', 'Urgency and pressure language'],
+      signals: ['Payment instruction change', 'Urgency and pressure language'],
       action: 'Action',
       actionValue: 'Flagged for review',
       viewWorkflow: 'View workflow',
@@ -438,8 +478,8 @@ const CONTENT = {
           text: 'Reviewers see why a message is risky and quickly confirm whether the request is legitimate.',
         },
         {
-          title: 'Privacy-first and auditable',
-          text: 'Keep only required data for alerts and preserve a clear tenant-scoped audit trail.',
+          title: 'Instant SMS and email alerts',
+          text: 'The moment a suspicious message lands, your team gets real-time SMS and email notifications with clear risk context and the next verification step.',
         },
         {
           title: 'Open-source foundation',
@@ -528,14 +568,55 @@ const CONTENT = {
     pricing: {
       aria: 'Pricing',
       eyebrow: 'Pricing',
-      title: 'Simple monthly pricing keeps decisions straightforward.',
-      startingRange: 'Starting range',
-      perMonth: 'per month, depending on tenant size and support needs',
-      cta: 'Talk to sales',
-      tiers: [
-        'Start: smaller business teams with baseline monitoring (1-5 mailboxes)',
-        'Growth: more mailboxes and higher alert volumes (6-20 mailboxes)',
-        'Scale: multi-team operations with centralized support (21+ mailboxes)',
+      title: 'Clear monthly packages for every team size',
+      lede: 'Choose the package that matches your mailbox count, workflow complexity, and support needs.',
+      popularLabel: 'Most popular',
+      packages: [
+        {
+          name: 'Start',
+          price: 'MKD 3,990',
+          period: 'per month',
+          badge: 'Best for smaller teams',
+          delivery: 'Web admin',
+          supportNote: 'Basic support for setup and onboarding.',
+          cta: 'Start with Start',
+          features: [
+            'Up to 2 mailboxes',
+            'BEC detection and flagging',
+            'SMS and email alerts',
+            'Basic audit log',
+          ],
+        },
+        {
+          name: 'Growth',
+          price: 'MKD 7,990',
+          period: 'per month',
+          badge: 'Most popular',
+          delivery: 'Web admin + desktop app',
+          supportNote: 'Support for Growth and Standard, with priority alerts.',
+          cta: 'Choose Growth',
+          features: [
+            'Up to 15 mailboxes',
+            'Everything in Start',
+            'Desktop app for faster reviews',
+            'Quarantine and priority alerts',
+          ],
+        },
+        {
+          name: 'Scale',
+          price: 'MKD 14,990',
+          period: 'per month',
+          badge: 'For multi-team operations',
+          delivery: 'Web admin + desktop app',
+          supportNote: 'Priority support, onboarding, and stronger operational control.',
+          cta: 'Review Scale',
+          features: [
+            '21+ mailboxes',
+            'Everything in Growth',
+            'Centralized policies and roles',
+            'Priority support and onboarding',
+          ],
+        },
       ],
     },
     faq: {
@@ -986,63 +1067,63 @@ export default function HomePage({ initialLanguage = 'mk' }) {
               <span className="mail-toolbar-time">09:41</span>
             </div>
 
-            <div className="mail-ribbon">
-              <span>{copy.preview.title}</span>
-            </div>
+            <div className="mail-shell">
+              <aside className="mail-sidebar" aria-hidden="true">
+                <span className="mail-sidebar-item active">Inbox</span>
+                <span className="mail-sidebar-item">Sent Items</span>
+                <span className="mail-sidebar-item">Archive</span>
+                <span className="mail-sidebar-item">Junk Email</span>
+              </aside>
 
-            <div className="mail-message">
-              <div className="mail-subject-row">
-                <strong>{language === 'en' ? 'RE: Updated payment instructions' : 'RE: Ажурирани инструкции за плаќање'}</strong>
-                <span className="spoof-badge">{language === 'en' ? 'High risk' : 'Висок ризик'}</span>
-              </div>
-
-              <div className="mail-meta-grid">
-                <div className="mail-meta-row">
-                  <span>{language === 'en' ? 'From' : 'Од'}</span>
-                  <strong>Cristian Fleming, CFO &lt;cfo@company-secure.net&gt;</strong>
-                </div>
-                <div className="mail-meta-row">
-                  <span>{language === 'en' ? 'To' : 'До'}</span>
-                  <strong>{language === 'en' ? 'Finance Team' : 'Финансиски тим'}</strong>
-                </div>
-              </div>
-
-              <p className="mail-body-preview">
-                {language === 'en'
-                  ? 'Please process this invoice immediately and update the account details below before noon.'
-                  : 'Ве молам веднаш процесирајте ја оваа фактура и ажурирајте ги податоците за сметката пред пладне.'}
-              </p>
-
-              <div className="alert-card">
-                <div className="alert-card-top">
-                  <span className="pill pill-danger">{copy.preview.risk}</span>
-                  <span className="small-copy">{copy.preview.detectedInMail}</span>
-                </div>
-                <div className="comparison">
-                  <div>
-                    <span className="comparison-label">{copy.preview.approvedAccount}</span>
-                    <strong>MK12 **** 2048</strong>
+              <div className="mail-main-pane">
+                <div className="mail-message">
+                  <div className="mail-subject-row">
+                    <strong>{language === 'en' ? 'RE: Updated payment instructions' : 'RE: Ажурирани инструкции за плаќање'}</strong>
+                    <span className="spoof-badge">{language === 'en' ? 'High risk' : 'Висок ризик'}</span>
                   </div>
-                  <div className="comparison-arrow">→</div>
-                  <div>
-                    <span className="comparison-label">{copy.preview.detectedAccount}</span>
-                    <strong>MK54 **** 8891</strong>
-                  </div>
-                </div>
-                <ul className="signal-list">
-                  {copy.preview.signals.map((signal) => (
-                    <li key={signal}>{signal}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
 
-            <div className="panel-footer">
-              <div>
-                <span className="comparison-label">{copy.preview.action}</span>
-                <strong>{copy.preview.actionValue}</strong>
+                  <div className="mail-meta-grid">
+                    <div className="mail-meta-row">
+                      <span>{language === 'en' ? 'From' : 'Од'}</span>
+                      <strong>Cristian Fleming, CFO &lt;cfo@company-secure.net&gt;</strong>
+                    </div>
+                    <div className="mail-meta-row">
+                      <span>{language === 'en' ? 'To' : 'До'}</span>
+                      <strong>{language === 'en' ? 'Finance Team' : 'Финансиски тим'}</strong>
+                    </div>
+                  </div>
+
+                  <p className="mail-body-preview">
+                    {language === 'en'
+                      ? 'Please process this invoice immediately and update the account details below before noon.'
+                      : 'Ве молам веднаш процесирајте ја оваа фактура и ажурирајте ги податоците за сметката пред пладне.'}
+                  </p>
+
+                  <div className="alert-card">
+                    <div className="alert-card-top">
+                      <span className="pill pill-danger">{copy.preview.risk}</span>
+                      <span className="small-copy">{copy.preview.detectedInMail}</span>
+                    </div>
+                    <div className="comparison">
+                      <div>
+                        <span className="comparison-label">{copy.preview.approvedAccount}</span>
+                        <strong>MK12 **** 2048</strong>
+                      </div>
+                      <div className="comparison-arrow">→</div>
+                      <div>
+                        <span className="comparison-label">{copy.preview.detectedAccount}</span>
+                        <strong>MK54 **** 8891</strong>
+                      </div>
+                    </div>
+                    <ul className="signal-list">
+                      {copy.preview.signals.map((signal) => (
+                        <li key={signal}>{signal}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                </div>
               </div>
-              <a href="#workflow">{copy.preview.viewWorkflow}</a>
             </div>
           </aside>
 
@@ -1126,23 +1207,39 @@ export default function HomePage({ initialLanguage = 'mk' }) {
           <div className="section-heading narrow">
             <p className="eyebrow">{copy.pricing.eyebrow}</p>
             <h2>{copy.pricing.title}</h2>
+            <p className="lede pricing-lede">{copy.pricing.lede}</p>
           </div>
-          <div className="price-card">
-            <div className="price-main">
-              <p className="price-label">{copy.pricing.startingRange}</p>
-              <strong className="price">€99-199</strong>
-              <span className="small-copy">{copy.pricing.perMonth}</span>
-            </div>
-            <div className="price-side">
-              <ul className="pricing-tiers">
-                {copy.pricing.tiers.map((tier) => (
-                  <li key={tier}>{tier}</li>
-                ))}
-              </ul>
-              <a className="button button-primary" href="#contact">
-                {copy.pricing.cta}
-              </a>
-            </div>
+          <div className="pricing-grid">
+            {copy.pricing.packages.map((pkg, index) => (
+              <article className={`pricing-package${index === 1 ? ' popular' : ''}`} key={pkg.name}>
+                <div className="pricing-package-top">
+                  <div>
+                    <p className="pricing-package-name">{pkg.name}</p>
+                    <p className="pricing-package-badge">{pkg.badge}</p>
+                  </div>
+                  {index === 1 ? <span className="pricing-package-popular">{copy.pricing.popularLabel}</span> : null}
+                </div>
+
+                <p className="pricing-package-delivery">{pkg.delivery}</p>
+
+                <p className="pricing-package-support">{pkg.supportNote}</p>
+
+                <div className="pricing-package-price-row">
+                  <strong className="pricing-package-price">{pkg.price}</strong>
+                  <span className="pricing-package-period">{pkg.period}</span>
+                </div>
+
+                <ul className="pricing-package-features">
+                  {pkg.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+
+                <a className={`button ${index === 1 ? 'button-primary' : 'button-secondary'} pricing-package-cta`} href="#contact">
+                  {pkg.cta}
+                </a>
+              </article>
+            ))}
           </div>
         </section>
 
