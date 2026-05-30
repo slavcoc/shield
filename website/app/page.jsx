@@ -44,6 +44,7 @@ const CONTENT = {
       ],
       action: 'Статус',
       actionValue: 'Означено за задолжителна проверка',
+      viewWorkflow: 'Погледни процес',
     },
     trust: {
       aria: 'Резиме на позиционирање',
@@ -363,6 +364,7 @@ const CONTENT = {
       signals: ['Executive/vendor impersonation', 'Payment instruction change', 'Urgency and pressure language'],
       action: 'Action',
       actionValue: 'Flagged for review',
+      viewWorkflow: 'View workflow',
     },
     trust: {
       aria: 'Positioning summary',
@@ -748,6 +750,7 @@ const WORKFLOW_ICONS = [ICONS.mail, ICONS.zap, ICONS.flag, ICONS.bell];
 export default function HomePage({ initialLanguage = 'mk' }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://emailshield.mk';
   const [language, setLanguage] = useState(initialLanguage);
+  const [isTopbarScrolled, setIsTopbarScrolled] = useState(false);
   const copy = CONTENT[language];
 
   const [formState, setFormState] = useState({
@@ -780,6 +783,17 @@ export default function HomePage({ initialLanguage = 'mk' }) {
   useEffect(() => {
     setLanguage(initialLanguage);
   }, [initialLanguage]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsTopbarScrolled(window.scrollY > 8);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const revealItems = document.querySelectorAll('.reveal');
@@ -904,7 +918,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
       <div className="backdrop backdrop-one" />
       <div className="backdrop backdrop-two" />
 
-      <header className="shell topbar">
+      <header className={`shell topbar${isTopbarScrolled ? ' topbar-scrolled' : ''}`}>
         <a className="brand" href="#hero" aria-label={copy.nav.homeAria}>
           <span className="brand-mark">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00111d" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -1028,6 +1042,7 @@ export default function HomePage({ initialLanguage = 'mk' }) {
                 <span className="comparison-label">{copy.preview.action}</span>
                 <strong>{copy.preview.actionValue}</strong>
               </div>
+              <a href="#workflow">{copy.preview.viewWorkflow}</a>
             </div>
           </aside>
 
