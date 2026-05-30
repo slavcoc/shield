@@ -271,6 +271,7 @@ a {
 }
 
 .hero h1.hero-title-mk {
+  max-width: 13ch;
   font-size: clamp(2.2rem, 4.8vw, 4.2rem);
 }
 
@@ -2062,6 +2063,7 @@ a {
   }
 
   .hero h1.hero-title-mk {
+    max-width: 12ch;
     font-size: clamp(2.05rem, 11.5vw, 3.35rem);
   }
 
@@ -2361,6 +2363,17 @@ h3,
 }
 
 .results-section::before {
+  background-color: #141414;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 92%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 92%);
+  pointer-events: none;
+  border-top: 0;
+}
+
+.contact::before {
   background-color: #141414;
   background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
@@ -2673,7 +2686,7 @@ h3,
 
 .outlook-mail .mail-shell {
   display: grid;
-  grid-template-columns: minmax(130px, 0.34fr) minmax(0, 1fr);
+  grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr);
   gap: 6px;
 }
 
@@ -2705,6 +2718,50 @@ h3,
 .outlook-mail .mail-main-pane {
   display: grid;
   gap: 6px;
+}
+
+.outlook-mail .mail-thread-list {
+  padding: 10px;
+  border-radius: 11px;
+  border: 0;
+  background: linear-gradient(180deg, rgba(18, 27, 40, 0.98), rgba(13, 20, 31, 0.98));
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 100%;
+}
+
+.outlook-mail .mail-thread-item {
+  border-radius: 9px;
+  padding: 9px;
+  background: rgba(29, 40, 59, 0.62);
+  border: 1px solid transparent;
+  display: grid;
+  gap: 5px;
+}
+
+.outlook-mail .mail-thread-item.active {
+  border-color: rgba(240, 116, 126, 0.45);
+  background: rgba(44, 31, 45, 0.72);
+}
+
+.outlook-mail .mail-thread-item .mail-subject-row {
+  border-bottom: 0;
+  padding-bottom: 0;
+  gap: 8px;
+}
+
+.outlook-mail .mail-thread-subject {
+  display: block;
+  color: #f3f6ff;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.outlook-mail .mail-thread-meta {
+  display: block;
+  font-size: 0.68rem;
+  color: rgba(205, 219, 242, 0.84);
 }
 
 .outlook-mail .mail-message {
@@ -2847,6 +2904,10 @@ h3,
   .outlook-mail .mail-sidebar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-content: initial;
+  }
+
+  .outlook-mail .mail-thread-list {
+    grid-template-columns: 1fr;
   }
 }
 

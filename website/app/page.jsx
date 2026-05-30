@@ -1075,54 +1075,44 @@ export default function HomePage({ initialLanguage = 'mk' }) {
                 <span className="mail-sidebar-item">Junk Email</span>
               </aside>
 
-              <div className="mail-main-pane">
-                <div className="mail-message">
+              <div className="mail-thread-list" aria-hidden="true">
+                <article className="mail-thread-item">
+                  <strong className="mail-thread-subject">Maya Thompson &lt;maya.thompson@northpeak.io&gt;</strong>
+                  <span className="mail-thread-meta">
+                    {language === 'en' ? '08:57 · Procurement' : '08:57 · Набавки'}
+                  </span>
+                </article>
+
+                <article className="mail-thread-item active">
                   <div className="mail-subject-row">
-                    <strong>{language === 'en' ? 'RE: Updated payment instructions' : 'RE: Ажурирани инструкции за плаќање'}</strong>
+                    <strong className="mail-thread-subject">Daniel Reyes &lt;daniel.reyes@fintide.group&gt;</strong>
                     <span className="spoof-badge">{language === 'en' ? 'High risk' : 'Висок ризик'}</span>
                   </div>
+                  <span className="mail-thread-meta">
+                    {language === 'en' ? '09:41 · Finance' : '09:41 · Финансии'}
+                  </span>
+                </article>
 
-                  <div className="mail-meta-grid">
-                    <div className="mail-meta-row">
-                      <span>{language === 'en' ? 'From' : 'Од'}</span>
-                      <strong>Cristian Fleming, CFO &lt;cfo@company-secure.net&gt;</strong>
-                    </div>
-                    <div className="mail-meta-row">
-                      <span>{language === 'en' ? 'To' : 'До'}</span>
-                      <strong>{language === 'en' ? 'Finance Team' : 'Финансиски тим'}</strong>
-                    </div>
-                  </div>
+                <article className="mail-thread-item">
+                  <strong className="mail-thread-subject">Elena Fischer &lt;elena.fischer@harborline.eu&gt;</strong>
+                  <span className="mail-thread-meta">
+                    {language === 'en' ? '10:12 · Operations' : '10:12 · Операции'}
+                  </span>
+                </article>
 
-                  <p className="mail-body-preview">
-                    {language === 'en'
-                      ? 'Please process this invoice immediately and update the account details below before noon.'
-                      : 'Ве молам веднаш процесирајте ја оваа фактура и ажурирајте ги податоците за сметката пред пладне.'}
-                  </p>
+                <article className="mail-thread-item">
+                  <strong className="mail-thread-subject">Amir Haddad &lt;amir.haddad@silverbridge.co&gt;</strong>
+                  <span className="mail-thread-meta">
+                    {language === 'en' ? '10:26 · Legal' : '10:26 · Правна служба'}
+                  </span>
+                </article>
 
-                  <div className="alert-card">
-                    <div className="alert-card-top">
-                      <span className="pill pill-danger">{copy.preview.risk}</span>
-                      <span className="small-copy">{copy.preview.detectedInMail}</span>
-                    </div>
-                    <div className="comparison">
-                      <div>
-                        <span className="comparison-label">{copy.preview.approvedAccount}</span>
-                        <strong>MK12 **** 2048</strong>
-                      </div>
-                      <div className="comparison-arrow">→</div>
-                      <div>
-                        <span className="comparison-label">{copy.preview.detectedAccount}</span>
-                        <strong>MK54 **** 8891</strong>
-                      </div>
-                    </div>
-                    <ul className="signal-list">
-                      {copy.preview.signals.map((signal) => (
-                        <li key={signal}>{signal}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                </div>
+                <article className="mail-thread-item">
+                  <strong className="mail-thread-subject">Sofia Petrescu &lt;sofia.petrescu@atlasworks.com&gt;</strong>
+                  <span className="mail-thread-meta">
+                    {language === 'en' ? '10:44 · Partnerships' : '10:44 · Партнерства'}
+                  </span>
+                </article>
               </div>
             </div>
           </aside>
