@@ -4,8 +4,9 @@
   "private": true,
   "description": "emailShield API service (Sprint 0 foundation)",
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "nest build",
-    "start": "node dist/main.js",
+    "start": "node dist/src/main.js",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "lint": "eslint \"src/**/*.ts\"",
@@ -16,7 +17,11 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
+    "prisma:seed": "ts-node -r tsconfig-paths/register prisma/seed.ts",
     "worker:dummy": "ts-node -r tsconfig-paths/register src/jobs/run-dummy-job.ts"
+  },
+  "prisma": {
+    "seed": "npm run prisma:seed"
   },
   "dependencies": {
     "@nestjs/bullmq": "^11.0.2",

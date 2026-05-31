@@ -2,7 +2,12 @@ import { BullModule } from '@nestjs/bullmq';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
+import { TenantModule } from './tenant/tenant.module';
+import { MailboxModule } from './mailbox/mailbox.module';
+import { AlertsModule } from './alerts/alerts.module';
+import { AuditModule } from './audit/audit.module';
 import { HealthController } from './health/health.controller';
+import { ObservabilityService } from './observability/observability.service';
 import { validateEnv } from './config/env.schema';
 import { JobsModule } from './jobs/jobs.module';
 import { ProtectedController } from './protected/protected.controller';
@@ -24,8 +29,13 @@ import { ProtectedController } from './protected/protected.controller';
       })
     }),
     AuthModule,
+    TenantModule,
+    MailboxModule,
+    AlertsModule,
+    AuditModule,
     JobsModule
   ],
-  controllers: [HealthController, ProtectedController]
+  controllers: [HealthController, ProtectedController],
+  providers: [ObservabilityService]
 })
 export class AppModule {}

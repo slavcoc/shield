@@ -8,6 +8,9 @@ export const envSchema = z.object({
   REDIS_HOST: z.string().min(1).default('localhost'),
   REDIS_PORT: z.coerce.number().int().positive().default(6379),
   REDIS_PASSWORD: z.string().optional(),
+  SENTRY_DSN: z.string().optional(),
+  OTEL_ENABLED: z.enum(['true', 'false']).default('false'),
+  OTEL_EXPORTER_OTLP_ENDPOINT: z.string().optional(),
   APP_NAME: z.string().default('emailShield API')
 });
 

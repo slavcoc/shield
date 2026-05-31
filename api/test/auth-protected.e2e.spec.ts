@@ -10,6 +10,10 @@ import { ConfigModule } from '@nestjs/config';
 import * as request from 'supertest';
 import { Request } from 'express';
 import { AuthModule } from '../src/auth/auth.module';
+import { TenantModule } from '../src/tenant/tenant.module';
+import { MailboxModule } from '../src/mailbox/mailbox.module';
+import { AlertsModule } from '../src/alerts/alerts.module';
+import { AuditModule } from '../src/audit/audit.module';
 import { Roles } from '../src/common/decorators/roles.decorator';
 import { JwtAuthGuard } from '../src/common/guards/jwt-auth.guard';
 import { RolesGuard } from '../src/common/guards/roles.guard';
@@ -42,7 +46,11 @@ describe('Auth + Protected Routes', () => {
             })
           ]
         }),
-        AuthModule
+        AuthModule,
+        TenantModule,
+        MailboxModule,
+        AlertsModule,
+        AuditModule
       ],
       controllers: [ProtectedTestController],
       providers: [JwtAuthGuard, RolesGuard]
@@ -94,5 +102,34 @@ describe('Auth + Protected Routes', () => {
     expect(response.body.ok).toBe(true);
     expect(response.body.user.tenantId).toBe('tenant_demo_alpha');
     expect(response.body.user.role).toBe('FINANCE_MANAGER');
+  });
+
+  it('serves tenant/mailbox/alerts/audit placeholder endpoints', async () => {
+    const login = await request(app.getHttpServer())
+      .post('/auth/login')
+      .send({ email: 'admin@demo-tenant.local', password: 'demo1234' })
+      .expect(201);
+
+    const token = login.body.accessToken;
+
+    await request(app.getHttpServer())
+      .get('/tenant/health')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
+
+    await request(app.getHttpServer())
+      .get('/mailbox/health')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
+
+    await request(app.getHttpServer())
+      .get('/alerts/health')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
+
+    await request(app.getHttpServer())
+      .get('/audit/health')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
   });
 });
