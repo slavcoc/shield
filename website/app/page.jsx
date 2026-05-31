@@ -859,7 +859,20 @@ export default function HomePage({ initialLanguage = 'mk' }) {
   const [submitState, setSubmitState] = useState({ status: 'idle', message: '' });
 
   function setLanguageAndUrl(nextLanguage) {
+    const nextCopy = CONTENT[nextLanguage];
+
     setLanguage(nextLanguage);
+    setFormState((prev) => ({
+      ...prev,
+      package: nextCopy.contact.packages.includes(prev.package)
+        ? prev.package
+        : nextCopy.contact.packages[0],
+    }));
+    setSubmitState((prev) => ({
+      ...prev,
+      message: '',
+    }));
+
     if (typeof window === 'undefined') return;
 
     const url = new URL(window.location.href);
@@ -874,10 +887,6 @@ export default function HomePage({ initialLanguage = 'mk' }) {
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
-
-  useEffect(() => {
-    setLanguage(initialLanguage);
-  }, [initialLanguage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -913,18 +922,6 @@ export default function HomePage({ initialLanguage = 'mk' }) {
 
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    setFormState((prev) => ({
-      ...prev,
-      package: copy.contact.packages.includes(prev.package) ? prev.package : copy.contact.packages[0],
-    }));
-
-    setSubmitState((prev) => ({
-      ...prev,
-      message: '',
-    }));
-  }, [copy]);
 
   async function handleSubmit(event) {
     event.preventDefault();

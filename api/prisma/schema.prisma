@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  ACCOUNTANT
+  FINANCE_MANAGER
+}
+
+enum MailboxStatus {
+  DISCONNECTED
+  CONNECTING
+  CONNECTED
+  FAILED
+}
+
+enum AlertStatus {
+  OPEN
+  RESOLVED
+  OVERRIDDEN
+}
+
+model Tenant {
+  id           String       @id @default(cuid())
+  name         String
+  locale       String       @default("mk")
+  createdAt    DateTime     @default(now())
+  users        User[]
+  mailboxes    Mailbox[]
+  alerts       Alert[]
+  auditEntries AuditEntry[]
+}
+
+model User {
+  id         String   @id @default(cuid())
+  email      String
+  fullName   String
+  role       UserRole
+  createdAt  DateTime @default(now())
+  tenantId   String
+  tenant     Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@unique([tenantId, email])
+}
+
+model Mailbox {
+  id           String        @id @default(cuid())
+  emailAddress String
+  providerHint String?
+  status       MailboxStatus @default(DISCONNECTED)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  tenantId     String
+  tenant       Tenant        @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@unique([tenantId, emailAddress])
+}
+
+model Alert {
+  id              String      @id @default(cuid())
+  title           String
+  reasonCode      String
+  approvedAccount String?
+  detectedAccount String?
+  status          AlertStatus @default(OPEN)
+  createdAt       DateTime    @default(now())
+  tenantId        String
+  tenant          Tenant      @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([tenantId, status, createdAt])
+}
+
+model AuditEntry {
+  id        String   @id @default(cuid())
+  actor     String
+  action    String
+  outcome   String
+  metadata  Json?
+  createdAt DateTime @default(now())
+  tenantId  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([tenantId, createdAt])
+}

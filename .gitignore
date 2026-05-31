@@ -1,1 +1,13 @@
 .DS_Store
+node_modules
+dist
+.env
+.env.*
+!.env.example
+coverage
+.next
+.turbo
+api/node_modules
+api/dist
+website/.next
+website/node_modules
