@@ -6,7 +6,7 @@ export function generateMetadata({ searchParams }) {
   return {
     title: isEn ? 'Security Overview' : 'Безбедносен преглед',
     description: isEn
-      'Security architecture overview for Shield invoice and payment fraud detection workflows.'
+      ? 'Security architecture overview for Shield invoice and payment fraud detection workflows.'
       : 'Преглед на безбедносната архитектура за процес на детекција на измами со фактури и плаќања.',
     alternates: {
       canonical: '/security',
