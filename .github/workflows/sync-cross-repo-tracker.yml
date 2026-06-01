@@ -13,7 +13,8 @@ jobs:
   sync-trackers:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ github.token }}
+      DEFAULT_GITHUB_TOKEN: ${{ github.token }}
+      CROSS_REPO_GH_TOKEN: ${{ secrets.CROSS_REPO_GH_TOKEN }}
       SHIELD_REPO: slavcoc/shield
       ADMIN_REPO: slavcoc/emailshield-admin-ui
       API_REPO: slavcoc/emailshield-backend-api
@@ -25,12 +26,23 @@ jobs:
         run: |
           set -euo pipefail
 
-          gh issue list -R "$SHIELD_REPO" --state all --limit 200 --json number,title,body,url > /tmp/shield-all.json
+          export GH_TOKEN="${CROSS_REPO_GH_TOKEN:-$DEFAULT_GITHUB_TOKEN}"
 
-          # Build source shield issue -> migrated destination issue URL map.
-          for repo in "$ADMIN_REPO" "$API_REPO" "$SUBLIME_REPO"; do
+          collect_migrated_issues() {
+            local repo="$1"
+            if ! gh repo view "$repo" --json nameWithOwner >/dev/null 2>/dev/null; then
+              echo "::warning::Skipping inaccessible repo $repo. Set CROSS_REPO_GH_TOKEN secret with read access to split repositories."
+              return 0
+            fi
+
             gh issue list -R "$repo" --state all --limit 200 --json number,body,url \
               | jq -r '.[] | select(.body|test("Migrated from shield #[0-9]+")) | [.body,.url] | @tsv'
+          }
+
+          gh issue list -R "$SHIELD_REPO" --state all --limit 200 --json number,title,body,url > /tmp/shield-all.json
+
+          for repo in "$ADMIN_REPO" "$API_REPO" "$SUBLIME_REPO"; do
+            collect_migrated_issues "$repo"
           done \
           | awk -F'\t' '
             {
@@ -43,7 +55,6 @@ jobs:
             }
           ' | sort -n > /tmp/shield-child-map.tsv
 
-          # Build parent -> child source issue map from explicit dependency tag.
           jq -r '.[] | [.number, .body] | @tsv' /tmp/shield-all.json \
           | awk -F'\t' '
             {
