@@ -1,0 +1,107 @@
+name: Sync Cross-Repo Tracker
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  sync-trackers:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SHIELD_REPO: slavcoc/shield
+      ADMIN_REPO: slavcoc/emailshield-admin-ui
+      API_REPO: slavcoc/emailshield-backend-api
+      SUBLIME_REPO: slavcoc/emailshield-sublime-bridge
+      TRACKER_MARKER: <!-- cross-repo-tracker -->
+    steps:
+      - name: Sync tracker comments
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          gh issue list -R "$SHIELD_REPO" --state all --limit 200 --json number,title,body,url > /tmp/shield-all.json
+
+          # Build source shield issue -> migrated destination issue URL map.
+          for repo in "$ADMIN_REPO" "$API_REPO" "$SUBLIME_REPO"; do
+            gh issue list -R "$repo" --state all --limit 200 --json number,body,url \
+              | jq -r '.[] | select(.body|test("Migrated from shield #[0-9]+")) | [.body,.url] | @tsv'
+          done \
+          | awk -F'\t' '
+            {
+              body=$1; url=$2;
+              if (match(body, /Migrated from shield #[0-9]+/)) {
+                token=substr(body, RSTART, RLENGTH);
+                gsub(/Migrated from shield #/, "", token);
+                print token "\t" url;
+              }
+            }
+          ' | sort -n > /tmp/shield-child-map.tsv
+
+          # Build parent -> child source issue map from explicit dependency tag.
+          jq -r '.[] | [.number, .body] | @tsv' /tmp/shield-all.json \
+          | awk -F'\t' '
+            {
+              num=$1; body=$2;
+              if (match(body, /Parent sprint issue: #[0-9]+/)) {
+                parent=substr(body, RSTART, RLENGTH);
+                gsub(/Parent sprint issue: #/, "", parent);
+                print parent "\t" num;
+              }
+            }
+          ' | sort -n > /tmp/shield-parent-children.tsv
+
+          cut -f1 /tmp/shield-parent-children.tsv | sort -n | uniq > /tmp/shield-parents.txt
+
+          while IFS= read -r parent; do
+            body_file=$(mktemp)
+            {
+              echo "$TRACKER_MARKER"
+              echo "Cross-repo execution tracker"
+              echo
+              echo "Source umbrella: #$parent"
+              echo
+              echo "Execution issues:"
+            } > "$body_file"
+
+            awk -F'\t' -v p="$parent" '$1==p {print $2}' /tmp/shield-parent-children.tsv \
+            | while IFS= read -r child; do
+              dest_url=$(awk -F'\t' -v c="$child" '$1==c {print $2}' /tmp/shield-child-map.tsv | head -n1)
+
+              if [[ -z "$dest_url" ]]; then
+                echo "- [ ] shield #$child -> (missing migrated destination)" >> "$body_file"
+                continue
+              fi
+
+              repo=$(echo "$dest_url" | awk -F'/' '{print $(NF-3)"/"$(NF-2)}')
+              number=$(echo "$dest_url" | awk -F'/' '{print $NF}')
+              state=$(gh issue view -R "$repo" "$number" --json state | jq -r '.state')
+
+              mark='[ ]'
+              if [[ "$state" == "CLOSED" ]]; then
+                mark='[x]'
+              fi
+
+              echo "- $mark shield #$child -> $dest_url" >> "$body_file"
+            done
+
+            tracker_body=$(cat "$body_file")
+            existing_comment_id=$(gh issue view -R "$SHIELD_REPO" "$parent" --json comments \
+              | jq -r --arg marker "$TRACKER_MARKER" '.comments[] | select(.body | contains($marker)) | .id' \
+              | head -n1)
+
+            if [[ -n "$existing_comment_id" ]]; then
+              jq -n --arg body "$tracker_body" '{body: $body}' \
+                | gh api "repos/$SHIELD_REPO/issues/comments/$existing_comment_id" --method PATCH --input - >/dev/null
+            else
+              jq -n --arg body "$tracker_body" '{body: $body}' \
+                | gh api "repos/$SHIELD_REPO/issues/$parent/comments" --method POST --input - >/dev/null
+            fi
+
+            rm -f "$body_file"
+          done < /tmp/shield-parents.txt
