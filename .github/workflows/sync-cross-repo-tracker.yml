@@ -102,13 +102,16 @@ jobs:
             done
 
             tracker_body=$(cat "$body_file")
-            existing_comment_id=$(gh issue view -R "$SHIELD_REPO" "$parent" --json comments \
-              | jq -r --arg marker "$TRACKER_MARKER" '.comments[] | select(.body | contains($marker)) | .id' \
-              | head -n1)
+            existing_comment_id=$(gh api "repos/$SHIELD_REPO/issues/$parent/comments" \
+              | jq -r --arg marker "$TRACKER_MARKER" 'map(select(.body | contains($marker))) | .[0].id // empty')
 
             if [[ -n "$existing_comment_id" ]]; then
               jq -n --arg body "$tracker_body" '{body: $body}' \
-                | gh api "repos/$SHIELD_REPO/issues/comments/$existing_comment_id" --method PATCH --input - >/dev/null
+                | gh api "repos/$SHIELD_REPO/issues/comments/$existing_comment_id" --method PATCH --input - >/dev/null \
+                || {
+                  jq -n --arg body "$tracker_body" '{body: $body}' \
+                    | gh api "repos/$SHIELD_REPO/issues/$parent/comments" --method POST --input - >/dev/null
+                }
             else
               jq -n --arg body "$tracker_body" '{body: $body}' \
                 | gh api "repos/$SHIELD_REPO/issues/$parent/comments" --method POST --input - >/dev/null
