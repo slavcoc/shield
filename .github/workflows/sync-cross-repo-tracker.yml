@@ -26,20 +26,20 @@ jobs:
         run: |
           set -euo pipefail
 
-          export GH_TOKEN="${CROSS_REPO_GH_TOKEN:-$DEFAULT_GITHUB_TOKEN}"
+          CROSS_TOKEN="${CROSS_REPO_GH_TOKEN:-$DEFAULT_GITHUB_TOKEN}"
 
           collect_migrated_issues() {
             local repo="$1"
-            if ! gh repo view "$repo" --json nameWithOwner >/dev/null 2>/dev/null; then
+            if ! GH_TOKEN="$CROSS_TOKEN" gh repo view "$repo" --json nameWithOwner >/dev/null 2>/dev/null; then
               echo "::warning::Skipping inaccessible repo $repo. Set CROSS_REPO_GH_TOKEN secret with read access to split repositories."
               return 0
             fi
 
-            gh issue list -R "$repo" --state all --limit 200 --json number,body,url \
+            GH_TOKEN="$CROSS_TOKEN" gh issue list -R "$repo" --state all --limit 200 --json number,body,url \
               | jq -r '.[] | select(.body|test("Migrated from shield #[0-9]+")) | [.body,.url] | @tsv'
           }
 
-          gh issue list -R "$SHIELD_REPO" --state all --limit 200 --json number,title,body,url > /tmp/shield-all.json
+          GH_TOKEN="$DEFAULT_GITHUB_TOKEN" gh issue list -R "$SHIELD_REPO" --state all --limit 200 --json number,title,body,url > /tmp/shield-all.json
 
           for repo in "$ADMIN_REPO" "$API_REPO" "$SUBLIME_REPO"; do
             collect_migrated_issues "$repo"
@@ -91,7 +91,7 @@ jobs:
 
               repo=$(echo "$dest_url" | awk -F'/' '{print $(NF-3)"/"$(NF-2)}')
               number=$(echo "$dest_url" | awk -F'/' '{print $NF}')
-              state=$(gh issue view -R "$repo" "$number" --json state | jq -r '.state')
+              state=$(GH_TOKEN="$CROSS_TOKEN" gh issue view -R "$repo" "$number" --json state | jq -r '.state')
 
               mark='[ ]'
               if [[ "$state" == "CLOSED" ]]; then
@@ -102,19 +102,19 @@ jobs:
             done
 
             tracker_body=$(cat "$body_file")
-            existing_comment_id=$(gh api "repos/$SHIELD_REPO/issues/$parent/comments" \
+            existing_comment_id=$(GH_TOKEN="$DEFAULT_GITHUB_TOKEN" gh api "repos/$SHIELD_REPO/issues/$parent/comments" \
               | jq -r --arg marker "$TRACKER_MARKER" 'map(select(.body | contains($marker))) | .[0].id // empty')
 
             if [[ -n "$existing_comment_id" ]]; then
               jq -n --arg body "$tracker_body" '{body: $body}' \
-                | gh api "repos/$SHIELD_REPO/issues/comments/$existing_comment_id" --method PATCH --input - >/dev/null \
+                | GH_TOKEN="$DEFAULT_GITHUB_TOKEN" gh api "repos/$SHIELD_REPO/issues/comments/$existing_comment_id" --method PATCH --input - >/dev/null \
                 || {
                   jq -n --arg body "$tracker_body" '{body: $body}' \
-                    | gh api "repos/$SHIELD_REPO/issues/$parent/comments" --method POST --input - >/dev/null
+                    | GH_TOKEN="$DEFAULT_GITHUB_TOKEN" gh api "repos/$SHIELD_REPO/issues/$parent/comments" --method POST --input - >/dev/null
                 }
             else
               jq -n --arg body "$tracker_body" '{body: $body}' \
-                | gh api "repos/$SHIELD_REPO/issues/$parent/comments" --method POST --input - >/dev/null
+                | GH_TOKEN="$DEFAULT_GITHUB_TOKEN" gh api "repos/$SHIELD_REPO/issues/$parent/comments" --method POST --input - >/dev/null
             fi
 
             rm -f "$body_file"
